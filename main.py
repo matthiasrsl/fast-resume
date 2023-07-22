@@ -60,23 +60,28 @@ class Resume:
                                 keywords.append(keyword)
                         element["keywords"] = keywords
                 elif section["type"] == "skills":
-                    skills= []
-                    for skill in section["contents"]:
-                        if isinstance(skill, str):
-                            skill = {"name": skill}
-                        skill["score"] = skill["score"] if "score" in skill else 50
-                        skills.append(skill)
+                    categories = []
+                    for category in section["contents"]:
+                        skills = []
+                        for skill in category["skills"]:
+                            if isinstance(skill, str):
+                                skill = {"name": skill}
+                            skill["score"] = skill["score"] if "score" in skill else 50
+                            skills.append(skill)
 
-                    proficient_skills = [
-                        skill for skill in skills if skill["score"] >= 70
-                    ]
-                    non_proficient_skills = [
-                        skill
-                        for skill in skills
-                        if (skill["score"] < 70 and skill["score"] >= 10)
-                    ]
-                    weak_skills = [skill for skill in skills if skill["score"] < 10]
-                    section["contents"] = proficient_skills + non_proficient_skills + weak_skills
+                        proficient_skills = sorted([
+                            skill for skill in skills if skill["score"] >= 70
+                        ], key=lambda skill: 100-skill["score"])
+                        non_proficient_skills = sorted([
+                            skill
+                            for skill in skills
+                            if (skill["score"] < 70 and skill["score"] >= 10)
+                        ], key=lambda skill: 100-skill["score"])
+                        weak_skills = sorted([skill for skill in skills if skill["score"] < 10], key=lambda skill: 100-skill["score"])
+                        
+                        category["skills"] = proficient_skills + non_proficient_skills + weak_skills
+                        categories.append(category)
+                    section["contents"] = categories
                 
             self.data["sections"] = [
                 section for section in self.data["sections"] if section["type"] != "none"

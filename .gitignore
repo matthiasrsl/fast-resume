@@ -1,0 +1,6 @@
+templates/*
+static/*
+resources/*
+resumes/*
+output/*
+__pycache__/*
