@@ -1,0 +1,443 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot');
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../resources/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/opensans/OpenSans-Bold.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    src: url("../resources/fonts/merriweather/Merriweather-Italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+/* Generic layout and test formatting */
+
+header, section {
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 10px;
+}
+
+.resume_wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    font-family: Merriweather;
+    padding: 10px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    color: var(--color-dark);
+}
+
+h3 {
+    font-family: 'Opensans';
+}
+
+p, li {
+    font-size: 12px;
+}
+
+svg path {
+    fill: var(--color-medium);
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* Header */
+
+
+li {
+    font-size: 16px;
+}
+
+.profile-and-contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    max-height: 2.8cm;
+    overflow: visible;
+}
+
+.profile-pic-and-infos {
+    display: flex;
+}
+
+/* Profile picture */
+
+.profile_pic {
+    position: relative;
+    top: -2px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    width: auto;
+    height:auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+header svg {
+    margin-right: 2px;
+    width: 22px;
+    flex-shrink: 0;
+}
+
+/* Profile infos */
+
+
+h1.name {
+    margin-bottom: 9px;
+    position: relative;
+    left: -2px;
+    font-family: Opensans;
+    /*color: #27344D;*/
+    color: var(--color-muted);
+    font-size: 2.5em;
+}
+.profile_infos p {
+    font-size: 16px;
+}
+
+/* Contact info */
+
+.contact-info {
+    width: 5.5cm;
+    margin-top: 15px;
+}
+
+.contact-info ul {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 1px;
+}
+
+.contact_text {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.contact-info svg {
+    position: relative;
+    top: -2px;
+}
+
+/* Title and about me */
+
+.about-me {
+    max-width: 67%;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.resume_title {
+    font-size: 20px;
+}
+
+.about-me p {
+    font-family: Opensans;
+    font-size: 12px;
+}
+
+/* Separation line */
+
+.sep_line {
+    height: 3px;
+}
+
+
+/* Resume body */
+
+.resume_body {
+    display: flex;
+}
+
+
+/* Curriculum section */
+
+section.curriculum {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.resumesection {
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--color-muted);
+    font-size: 14px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-muted);
+}
+
+.exp {
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed var(--color-light);
+}
+
+.exp.last {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.exp_label {
+    font-size: 16px;
+    position: relative;
+    top: 2px;
+    font-style: italic;
+}
+
+.exp p {
+    line-height: 150%;
+}
+
+.exp_dates_and_place, .acc_name, .lang_info {
+    font-family: Opensans;
+    color: var(--color-medium);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.exp_dates {
+    text-transform: none;
+    font-family: "DejaVu Serif";
+    font-style: italic;
+}
+
+.exp_dates_and_location {
+    white-space: nowrap;
+}
+
+.info .exp_dates_and_location {
+    white-space: normal;
+}
+
+.info .exp_keywords, .info .exp_dates, .info .exp_place {
+    margin-right: 22px;
+}
+
+.exp_keywords, .exp_dates, .exp_place {
+    margin-right: 22px;
+}
+
+.lang_level, .school a, .company a, .company {
+    color: var(--color-vibrant) !important;
+    font-weight: bold;
+}
+
+.exp_description {
+    font-family: Opensans;
+}
+
+.exp svg {
+    position: relative;
+    top: 8px;
+    width: 16px;
+    margin-top: -7px;
+}
+
+.experience .links {
+    margin-bottom: 5px;
+}
+
+/* Accomplishements (projects) */
+
+.exp_accomplishments .exp_label {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: Opensans;
+}
+
+.accomplishement .acc_link a, .links a {
+    color: var(--color-medium);
+    font-family: Opensans;
+}
+
+.accomplishement svg {
+    margin: -5px inherit;
+    position: relative;
+    top: 8px;
+}
+
+.acc_link {
+    display: inline-block;
+    max-height: 18px;
+    overflow: visible;
+    text-transform: none;
+    font-family: Opensans;
+    font-size: 12px;
+}
+
+.exp_label .acc_link a {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.acc_name {
+    text-transform: none;
+}
+
+.accomplishement .exp_description {
+    margin-top: 3px;
+}
+
+/* References */
+
+.ref_name {
+    font-size: 14px;
+    color: var(--color-dark);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ref_email {
+    font-style: italic;
+    font-family: Opensans;
+    color: var(--color-medium);
+
+}
+
+/* Languages */
+
+.exp.lang {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+}
+
+.lang_name {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.lang_level_refine, .certification_label {
+    font-weight: bold;
+    color: var(--color-medium);
+}
+
+
+
+
+/* Info section */
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 5.5cm;
+    padding-top: 0;
+}
+
+.info > div {
+    margin-bottom: 20px;
+}
+
+.info ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+.skills li, .keyword {
+    display: inline-block;
+    border: 1px var(--color-light); /* color bbb */
+    padding: 2px 5px;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.skills li {
+    font-size: 14px;
+    border-style: solid;
+    padding: 3px 7px;
+}
+
+.skills li.proficient {
+    background: var(--color-muted); /* 27344d */
+    border-color: var(--color-muted);
+    color: white;
+}
+.skills li.weak {
+    border-style: dashed;
+}
+
+.keyword.secondary {
+    border-style: dashed;
+}
+
+.keyword {
+    border-style: solid;
+}
+
+
+.traits li {
+    margin-top: 5px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+
+.hobbies li {
+    margin-top: 5px;
+}
+
+.hobby_name {
+    font-style: italic;
+}
+
+.hobby_dates {
+    font-size: 12px;
+}
+
+.hobby_refine {
+    font-size: 12px;
+    color: var(--color-medium);
+    font-family: Opensans;
+}

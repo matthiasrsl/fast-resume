@@ -1,0 +1,195 @@
+{% extends "./base_resume.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/sober.css" />
+{% endblock %}
+
+{% block resume %}
+<div class="resume_wrapper">
+  <div class="header-and-exp">
+    <header>
+      <div class="profile-and-contact">
+        <div class="profile-pic-and-infos">
+          {% if settings.display_photo %}
+          <img class="profile_pic" src="{{ person.photo }}" alt="photo" />
+          {% endif %}
+          <div class="profile_infos" id="profile_infos">
+            <h1 class="name">{{ person.name.first }}
+              {{ person.name.last }}</h2>
+              <p class="occupation">{{ person.occupation }}</p>
+              <p class="birth">{{ person.age }} ans
+                {% if person.transportation != '' %}
+                ・ {{ person.transportation }}
+                {% endif %}
+              </p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <h3>Contact</h3>
+          <ul>
+            <li>{{ person.address }}</li>
+            {% for email in person.email %}
+            <li>{{ email }}</li>
+            {% endfor %}
+            {% for phone in person.phone %}
+            <li>{{ phone }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-me">
+        <h2 class="resume_title">{{ title }}</h2>
+        <p>{{ about_me }}</p>
+      </div>
+    </header>
+
+    <section class="curriculum">
+      <div class="education">
+        <h3>Formation</h3>
+        <table>
+          {% for edexp in education %}
+          <tr class="exp education_exp">
+            <td class="exp_dates">
+            </td>
+            <td class="exp_content">
+              <h4>
+                {% if edexp.graduated %}
+                Diplôme:
+                {% endif %}
+                {{ edexp.label }}
+                {% if edexp.refine %}
+                <span class="exp_refine">({{ edexp.refine }})</span>
+                {% endif %}
+              </h4>
+              <p class="exp_description">
+                {{ edexp.description }}
+              </p>
+              <p class="exp_place">{{ edexp.school }}
+                ({{ edexp.place.town }}, {{ edexp.place.country }})
+              </p>
+              <p class="exp_dates">
+
+              </p>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="experience">
+        <h3>Expériences</h3>
+        <table>
+          {% for exp in experience %}
+          <tr class="exp professional_exp">
+            <td class="exp_dates">
+            </td>
+            <td class="exp_content">
+              <h4>
+                {{ exp.position }}
+                {% if exp.refine %}
+                <span class="exp_refine">({{ exp.refine }})</span>
+                {% endif %}
+              </h4>
+              <p class="exp_description">
+                {{ exp.description }}
+              </p>
+              <p class="exp_place">{{ exp.company }}
+                ({{ exp.place.town }}, {{ exp.place.country }})
+              </p>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="languages">
+        <h3>Langues</h3>
+        <table>
+          {% for language in languages %}
+          <tr class="exp professional_exp">
+            <td class="lang_name">
+              <h4>{{ language.code }}</h4>
+            </td>
+            <td class="lang_info">
+              <h4>
+                {{ language.level }}
+                {% if language.mother_tongue %}
+                Langue maternelle
+                {% endif %}
+                {% if language.level_refine %}
+                <span class="lang_level_refine">
+                  ({{ language.level_refine }})
+                </span>
+                {% endif %}
+              </h4>
+              {% for cert in language.certifications %}
+              <div class="language_certification">
+                <h5>
+                  Certification: {{ cert.label }},
+                  {% if cert.level %}
+                  niveau {{ cert.level }}
+                  {% elif cert.score %}
+                  {{ cert.score }}{% if cert.max_score %}/{{ cert.max_score }}{% endif %}
+                  {% endif %}
+                  ({{ cert.date }})
+                </h5>
+                <p>{{ cert.authority }}</p>
+                {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section class="info">
+    {% if skills %}
+    <div class="skills">
+      <h3>Compétences</h3>
+      <ul class="skill-list">
+        {% for skill in skills %}
+        <li>
+          <span class="skill-name">{{ skill.name }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if traits %}
+    <div class="traits">
+      <h3>Qualités</h3>
+      <ul class="trait-list">
+        {% for trait in traits %}
+        <li>
+          <span class="trait-name">
+            {{ trait }}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if hobbies %}
+    <div class="hobbies">
+      <h3>Occupations</h3>
+      <ul class="hobbies-list">
+        {% for hobby in hobbies %}
+        <li>
+          {{ hobby.name }}
+          <p class="hobby_dates">
+            {{ hobby.timeperiod }}
+          </p>
+        </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+  </section>
+</div>
+{% endblock %}

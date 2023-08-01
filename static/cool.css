@@ -1,0 +1,193 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Generic layout and test formatting */
+
+header, section {
+    padding: 30px;
+}
+
+.resume_wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: open_sansregular;
+    height: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p, h1, h2, h3, h4 {
+    margin: 0;
+}
+
+p, li {
+    font-size: 12px;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    background: #42b883;
+    color: white;
+}
+
+header h1 {
+    font-size: 28px;
+    stext-align: center;
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+}
+
+/* Profile picture */
+
+.profile_pic {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* Profile infos */
+
+.profile_infos {
+    xmargin-left: 20px;
+    padding-top: 20px;
+}
+
+/* Resume body */
+
+.resume_body {
+    display: flex;
+    bottom: 0;
+    flex-grow: 1;
+}
+
+/* Info section */
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    background: #34495E;
+    color: white;
+    max-width: 33%;
+    flex-grow: 1;
+}
+
+.info div {
+    margin: 15px 0;
+}
+
+.info h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.info ul {
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li, .trait-list li {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 3px 7px;
+    margin-top: 3px;
+}
+
+/*
+.trait-list li {
+    display: inline-block;
+    width: 82px;
+    height: 82px;
+    border: 1px solid white;
+    border-radius: 500px;
+    margin-top: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.trait-list .trait-name {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    text-align: center;
+    width: auto;
+    padding: 0 5px;
+}*/
+
+/* Hobbies */
+
+.hobbies li {
+    margin-bottom: 3px;
+}
+
+.hobbies .experience_dates {
+    font-size: 10px;
+}
+
+/* Curriculum section */
+
+section.curriculum {
+    display: flex;
+    flex-direction: column;
+    padding-left: 45px;  /* Offset all content. */
+}
+
+.curriculum h3 {
+    color: #34495E;
+    position: relative;  
+    left: -15px;  /* Cancel offset for titles. */
+}
+
+.curriculum h4 {
+    font-size: 15px;
+}
+
+.experience {
+    margin: 10px 0;
+}
+
+.experience_place {
+    font-style: italic;
+}
+
+.curriculum .experience_dates {
+    color: #555;
+    font-style: italic;
+}
+    
+/* Languages */
+
+td.lang_name {
+    padding-right: 20px;
+    text-align: right;
+}
+

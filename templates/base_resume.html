@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>{% block title %}Curriculum Vitae{% endblock %}</title>
+    <meta charset="utf-8"></meta>
+    <link rel="stylesheet" href="../static/base_resume.css" />
+    {% block css %}
+    {% endblock %}    
+  </head>
+  
+  <body>
+    <div id="resume-page-wrapper">
+      <div id=page>
+        <div id="resume" style="
+          --color-vibrant: {{ settings.colors.vibrant }};
+          --color-muted: {{ settings.colors.muted }};
+          --color-light: {{ settings.colors.light }};
+          --color-dark: {{ settings.colors.dark }};
+          --color-medium: {{ settings.colors.medium }};
+        ">
+          {% block resume %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

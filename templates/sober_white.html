@@ -1,0 +1,209 @@
+{% extends "cvdata/base_resume.html" %}
+{% load static i18n experience_dates%}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'cvdata/resumes/sober_white.css' %}" />
+{% endblock %}
+
+{% block resume %}
+<div class="resume_wrapper">
+  <div class="header-and-exp">
+    <header>
+      <div class="profile-and-contact">
+        <div class="profile-pic-and-infos">
+          {% if resume.display_profile_pic %}
+            <img class="profile_pic" src="{{ resume.profile.picture.url }}" 
+                alt="photo" />
+          {% endif %}
+          <div class="profile_infos" id="profile_infos">
+            <h2 class="name">{{ resume.profile.user.first_name }}
+                {{ resume.profile.user.last_name }}</h2>
+            <p class="occupation">{{ resume.profile.occupation }}</p>
+            <p class="birth">{{ profile.age }} ans
+                {% if profile.transportation_info != '' %}
+                    ・ {{ profile.transportation_info }}
+                {% endif %}
+            </p>
+          </div>
+        </div>
+        <div class="contact-info">
+          <h3>Contact</h3>
+          <ul>
+            <li>{{ resume.profile.address }}</li>
+            <li>{{ resume.profile.user.email }}</li>
+            <li>{{ resume.profile.phone_0 }}</li>
+            <!--<li>
+              <a href="https://www.linkedin.com/in/
+                  {{ resume.profile.linkedin_username }}">
+                  linkedin.com/in/{{ resume.profile.linkedin_username }}
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/{{ resume.profile.github_username }}">
+                  github.com/{{ resume.profile.github_username }}
+              </a>
+            </li>-->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="about-me">
+        <p>{{ resume.about_me }}</p>
+      </div>
+    </header>
+    
+    <section class="curriculum">
+      <div class="education">
+        <h3>Formation</h3>
+        <table>
+          {% for edexp in education %}
+            <tr class="exp education_exp">
+              <td class="exp_dates">
+                {% exp_dates edexp %}
+              </td>
+              <td class="exp_content">
+                <h4>
+                  {% if edexp.is_degree %}
+                    Diplôme:
+                  {% endif %}
+                  {{ edexp.label }}
+                  {% if edexp.refine != '' %}
+                    <span class="exp_refine">({{ edexp.refine }})</span>
+                  {% endif %}
+                </h4>
+                <p class="exp_description">
+                  {{ edexp.description }}
+                </p>
+                <p class="exp_place">{{ edexp.organization }}
+                    ({{ edexp.place}})
+                </p>
+                <p class="exp_dates">
+                  
+                </p>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+      
+      <div class="experience">
+        <h3>Expériences</h3>
+        <table>
+          {% for exp in experiences %}
+            <tr class="exp professional_exp">
+              <td class="exp_dates">
+                {% exp_dates exp %}
+              </td>
+              <td class="exp_content">
+                <h4>
+                  {{ exp.label }}
+                  {% if exp.refine != '' %}
+                    <span class="exp_refine">({{ exp.refine }})</span>
+                  {% endif %}
+                </h4>
+                <p class="exp_description">
+                  {{ exp.description }}
+                </p>
+                <p class="exp_place">{{ exp.organization }}
+                    ({{ exp.place}})
+                </p>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+      
+      <div class="languages">
+        <h3>Langues</h3>
+        <table>
+          {% for language in languages %}
+            {% get_language_info for language.language as lang %}
+            <tr class="exp professional_exp">
+              <td class="lang_name">
+                <h4>{{ lang.name_translated }}</h4>
+              </td>
+              <td class="lang_info">
+                <h4>
+                  {{ language.level }}
+                  {% if language.level_refine != '' %}
+                    <span class="lang_level_refine">
+                      ({{ language.level_refine }})
+                    </span>
+                  {% endif %}
+                </h4>
+                {% for cert in certifications %}
+                  {% if cert.language == language %}
+                    <div class="language_certification">
+                      <h5>
+                        Certification: {{ cert.label }}, niveau {{ cert.level}}
+                        ({{ cert.begin|date:cert.begin_precision }})
+                      </h5>
+                      <p>{{ cert.organization }}</p>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+  </div>
+    
+  <section class="info">
+    {% if skills %}
+        <div class="skills">
+          <h3>Compétences</h3>
+          <ul class="skill-list">
+            {% for skill in skills %}
+              <li>
+                <span class="skill-name">{{ skill.name }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+    {% endif %}
+    
+    {% if traits %}
+        <div class="traits">
+          <h3>Qualités</h3>
+          <ul class="trait-list">
+            {% for trait in traits %}
+              <li>
+                <span class="trait-name">
+                  {{ trait.name|lower|capfirst|truncatechars:15 }}
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+    {% endif %}
+    
+    {% if hobbies %}
+        <div class="hobbies">
+          <h3>Occupations</h3>
+          <ul class="hobbies-list">
+            {% for hobby in hobbies %}
+              <li>
+                {{ hobby.name }}
+                {% if hobby.begin %}
+                  <p class="hobby_dates">
+                    {% if not hobby.end %}
+                      Depuis
+                    {% endif %}
+                    {{ hobby.begin|date:hobby.begin_precision }}
+                    {% if hobby.end %}
+                      -
+                    {% endif %}
+                    {{ hobby.end|date:hobby.end_precision }}
+                  </p>
+                {% endif %}
+              </li>
+              
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+  </section>
+</div>
+{% endblock %}

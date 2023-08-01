@@ -1,0 +1,514 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot');
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../resources/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/opensans/OpenSans-Bold.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    src: url("../resources/fonts/merriweather/Merriweather-Italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Material icons */
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v114/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    color: var(--color-medium);
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Generic layout and test formatting */
+
+header, section {
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+.resume_wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    font-family: Merriweather;
+    padding: 10px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    color: var(--color-dark);
+}
+
+h3 {
+    font-family: 'Opensans';
+}
+
+p, li {
+    font-size: 12px;
+}
+
+svg path, .material-icons {
+    fill: var(--color-medium);
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/* Header */
+
+
+li {
+    font-size: 16px;
+}
+
+.profile-and-contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    max-height: 2.8cm;
+    overflow: visible;
+}
+
+.profile-pic-and-infos {
+    display: flex;
+}
+
+/* Profile picture */
+
+.profile_pic {
+    position: relative;
+    top: -2px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    width: auto;
+    height:auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+header svg {
+    margin-right: 2px;
+    width: 22px;
+    flex-shrink: 0;
+}
+
+/* Profile infos */
+
+
+h1.name {
+    margin-bottom: 3px;
+    position: relative;
+    left: -2px;
+    font-family: Opensans;
+    /*color: #27344D;*/
+    color: var(--color-muted);
+    font-size: 2.5em;
+}
+.profile_infos p {
+    font-size: 16px;
+    font-family: Opensans;
+    padding-right: 80px;
+}
+
+/* Contact info */
+
+.contact-info {
+    width: 5.5cm;
+    margin-top: 15px;
+}
+
+.contact-info ul {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 12px;
+    display: flex;
+    font-family: Opensans;
+    margin-bottom: 1px;
+    color: var(--color-dark);
+}
+
+.contact_text {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.contact-info svg {
+    position: relative;
+}
+
+.contact-info .material-icons {
+    position: relative;
+    top: -2px;
+    left: -1px;
+    margin: auto 1px;
+}
+
+/* Title and about me */
+
+.about-me {
+    max-width: 67%;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.resume_title {
+    font-size: 20px;
+}
+
+.about-me p {
+    font-family: Opensans;
+    font-size: 12px;
+}
+
+/* Separation line */
+
+.sep_line {
+    height: 3px;
+}
+
+
+/* Resume body */
+
+.resume_body {
+    display: flex;
+}
+
+
+/* Curriculum section */
+
+section.curriculum {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.resumesection {
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--color-muted);
+    font-size: 14px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-muted);
+}
+
+.exp {
+    margin-bottom: 3px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--color-light);
+}
+
+.exp.last {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.exp_label {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.exp p {
+    line-height: 150%;
+}
+
+.exp_dates_and_place, .acc_name, .lang_info {
+    font-family: Opensans;
+    color: var(--color-medium);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.exp .company {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.exp_dates {
+    text-transform: none;
+    font-family: "DejaVu Serif";
+    font-style: italic;
+}
+
+.exp_dates_and_location {
+    white-space: nowrap;
+}
+
+.info .exp_dates_and_location {
+    white-space: normal;
+}
+
+.info .exp_keywords, .info .exp_dates, .info .exp_place {
+    margin-right: 22px;
+}
+
+.exp_keywords, .exp_dates, .exp_place {
+    margin-right: 22px;
+}
+
+.exp .keyword {
+    font-size: 12px;
+    padding: 1px 5px;
+}
+
+.lang_level, .school a, .company a, .company {
+    color: var(--color-vibrant) !important;
+    font-weight: bold;
+}
+
+.exp_description {
+    font-family: Opensans;
+    margin-top: 3px;
+}
+
+.exp svg {
+    position: relative;
+    top: 8px;
+    width: 16px;
+    margin-top: -7px;
+}
+
+.experience .links {
+    margin-bottom: 5px;
+}
+
+/* Accomplishements (projects) */
+
+.exp_accomplishments .exp_label {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: Opensans;
+    position: relative;
+    top: 3px;
+}
+
+.accomplishement .acc_link a, .links a {
+    color: var(--color-medium);
+    font-family: Opensans;
+}
+
+.accomplishement svg {
+    margin: -5px inherit;
+    position: relative;
+    top: 8px;
+}
+
+.acc_link {
+    display: inline-block;
+    max-height: 18px;
+    overflow: visible;
+    text-transform: none;
+    font-family: Opensans;
+    font-size: 12px;
+}
+
+.exp_label .acc_link a {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.acc_name {
+    text-transform: none;
+}
+
+.accomplishement .exp_description {
+    margin-top: 3px;
+}
+
+/* References */
+
+.ref_name {
+    font-size: 14px;
+    color: var(--color-dark);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ref_email {
+    font-style: italic;
+    font-family: Opensans;
+    color: var(--color-medium);
+
+}
+
+/* Languages */
+
+.exp.lang {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+}
+
+.lang_name {
+    font-size: 16px;
+    font-style: italic;
+    display: block;
+    margin: 5px 0 3px 0;
+}
+
+.lang_level_refine, .certification_label {
+    font-weight: bold;
+    color: var(--color-medium);
+}
+
+
+
+
+/* Info section */
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 5.5cm;
+    padding-top: 0;
+}
+
+.info > div {
+    margin-bottom: 20px;
+}
+
+.info ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Skill section */
+
+.skillcategory {
+    margin-bottom: 3px;
+    padding: 4px 0 7px;
+    border-bottom: 1px dashed var(--color-light);
+}
+
+.skillcategory.last {
+    border-bottom: none;
+}
+
+.skills h4 {
+    font-family: Merriweather;
+    color: var(--color-muted);
+    font-size: 14px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.skills .skill-name {
+    font-size: 12px;
+    font-family: Opensans;
+}
+
+.skills .skill-name.proficient {
+    font-weight: bold;
+}
+
+.skills .skill-name.weak {
+    color: var(--color-medium);
+    font-style: italic;
+}
+
+.keyword {
+    display: inline-block;
+    border: 1px var(--color-light); /* color bbb */
+    padding: 2px 5px;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.keyword.secondary {
+    border-style: dashed;
+}
+
+.keyword {
+    border-style: solid;
+}
+
+/* End of skill section */
+
+
+.traits li {
+    margin-top: 5px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+
+.hobbies li {
+    margin-top: 5px;
+}
+
+.hobby_name {
+    font-style: italic;
+}
+
+.hobby_dates {
+    font-size: 12px;
+}
+
+.hobby_refine {
+    font-size: 12px;
+    color: var(--color-medium);
+    font-family: Opensans;
+}

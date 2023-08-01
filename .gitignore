@@ -1,6 +1,4 @@
-templates/*
-static/*
-resources/*
 resumes/*
+!resumes/samples/
 output/*
 __pycache__/*

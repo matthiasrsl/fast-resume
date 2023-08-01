@@ -92,7 +92,7 @@ class Resume:
 
     def render(self, template_name):
         template = env.get_template(template_name + ".html")
-        with open(f"output/{self.name}.html", "w") as output_file:
+        with open(f"output/{re.sub(r'/', '_', self.name)}.html", "w") as output_file:
             output_file.write(template.render(self.data))
 
 

@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    background: #ddd;
+}
+
+#resume-page-wrapper {
+    position: absolute;
+}
+
+#page {
+    width: 21.0cm;
+    height: 29.7cm;  /* Generate a secondary blank page in pdf, but better
+                        than white bottom border. */
+    overflow: hidden;
+}
+
+#page > * {
+    background: #fff;
+}
+
+#resume {  /* Don't set position to absolute, it breaks the pdf render. */
+    height: 100%;
+}
