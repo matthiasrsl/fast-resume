@@ -1,0 +1,124 @@
+[tool.poetry]
+name = "lightcvmaker"
+version = "0.1.0"
+description = ""
+authors = ["Matthias Roussel <matthias.roussel01@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Jinja2 = "^3.1.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.282"
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
+exclude = ["manage.py"]
+
+[tool.ruff]
+line-length = 119
+select = [  # List of the activated rule categories.
+    # Basic checks.
+    'F',    # Pyflakes.
+    'E',    # pycodestyle errors.
+    'W',    # pycodestyle warnings.
+    'PLC',  # Pylint convention.
+    'PLE',  # Pylint errors.
+    'PLR',  # Pylint refactor.
+    'PLW',  # Pylint warnings.
+
+    # Type checking-related checks.
+    # 'ANN',  # flake8-annotations: Type annotations.
+    'PYI',  # flake8-pyi: Type checking.
+    'TCH',  # flake8-type-checking: Checks imports that are used for type checking only.
+
+    # Checks related to docstrings and comments.
+    # 'D',    # pydocstyle: docstrings.
+    # 'TD',   # flake8-todos: Best practices for TODO tags.
+    # 'FIX',  # flake8-fixme: Forbids TODO, FIXME, XXX and HACK tags.
+    # 'ERA',  # eradicate: Detects commented-out code.
+
+    # Checks related to string formatting.
+    'G',    # flake8-logging-format: Ensure logging messages are correctly formated (for perf).
+    'Q',    # flake8-quotes: Checks appropriate use of simple and double quotes.
+    'FLY',  # flynt: Requires f-strings instead of other string formatting methods.
+    'ISC',  # flake8-implicit-str-concat: Forbid implicit string concatenations.
+
+    # Checks related to imports.
+    'I',    # isort.
+    'ICN',  # flake8-import-conventions: Enforces convention on the name of imported modules.
+    'INP',  # flake8-no-pep420: Checks for imported packages that are missing an __init__.py file.
+    'TID',  # flake8-tidy-imports: Imports best practices.
+
+    # Checks related to third-party libraries and frameworks.
+    'PT',   # flake8-pytest-style: Pytest-specific checks.
+    'T10',  # flake8-debugger: Check usage of pdb, the Python debugger.
+    'DJ',   # flake8-django: Django-specific checks.
+    'NPY',  # Numpy-specific checks.
+    'PD',   # pandas-vet: Pandas-specific checks.
+    'AIR',  # Airflow-specific checks.
+
+    # Error handling-related checks.
+    'BLE',  # flake8-blind-except.
+    'EM',   # flake8-errmsg: Helps format nice error messages.
+    'RSE',  # flake8-raise: Forbid the use of parentheses on raised exceptions.
+    'TRY',  # tryceratops: Prevents exception handling antipatterns.
+
+    # Other checks
+    'C90',  # mccabe: cyclomatic complexity.
+    'N',    # pep8-naming.
+    'UP',   # pyupgrade: Update to newer Python syntax.
+    'YTT',  # flake8-2020: Checks misuse of sys.version or sys.version_info.
+    'ASYNC',# flake8-async.
+    'S',    # flake8-bandit: security checks. RECOMMENDED.
+    'FBT',  # flake8-boolean-trap.
+    'B',    # flake8-bugbear: Detects bugs and design problems.
+    'A',    # flake8-builtins: Detects variables that shadow builtins.
+    'COM',  # flake8-commas: Check appropriate use of commas. Can be solved with black or ruff fix.
+    # 'CPY',  # Copyright-related rules: Currently it does not contain any rule.
+    'C4',   # flake8-comprehensions: Checks appropriate use of comprehensions, generators, etc.
+    'DTZ',  # flake8-datetimez: Forbids usage of timzone-naive datetimes.
+    # 'EXE',  # flake8-executable: Checks Python files are executable and have an appropriate shebang.
+    'FA',   # flake8-future-annotations.
+    'PIE',  # flake8-pie: Misc lints.
+    'T20',  # flake8-print: Forbids the use of prints (logging should be used instead).
+    'RET',  # flake8-return: Checks appropriate use of the return statement.
+    'SLF',  # flake8-self: Forbids access of private members outside class.
+    'SLOT', # flake8-slots.
+    'SIM',  # flake8-simplify: Suggests smalls refoactoring to simplify the code.
+    'INT',  # flake8-gettext: Specific checks for gettext, the i18n module.
+    'ARG',  # flake8-unused-arguments.
+    'PTH',  # flake8-use-pathlib: Enforce the use of pathlib to manipulate file paths.
+    'PGH',  # pygrep-hooks
+    'PERF', # Perflint: Detects performance anti-patterns.
+    'RUF'   # Ruff-specific checks: misc checks.
+]
+
+ignore = [  # Ignored rules.
+    'RUF100',  # Does not work.
+    'PT009',
+]
+
+exclude = [
+
+]
+
+[tool.ruff.pylint]
+# Maximum number of arguments for function / method.
+max-args = 6  # Default: 5
+
+# Maximum number of branch for function / method body.
+max-branches = 12  # Default: 12
+
+# Maximum number of return / yield for function / method body.
+max-returns = 6  # Default: 6
+
+# Maximum number of statements in function / method body.
+max-statements = 50  # Default: 50

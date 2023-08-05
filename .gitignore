@@ -2,3 +2,4 @@ resumes/*
 !resumes/samples/
 output/*
 __pycache__/*
+logs/
