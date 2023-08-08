@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import sys
 from typing import Any
+from urllib.parse import urlparse
 
 from jinja2 import Template, Environment, FileSystemLoader
 from jinja2.exceptions import TemplateSyntaxError
@@ -140,6 +141,14 @@ SECTION_ATTRIBUTE_MAPPING = {
         "url": "email",
     },
 }
+
+DOMAIN_SERVICE_MAPPING = {
+    "twitter.com": ("twitter", "Twitter"),
+    "github.com": ("github", "GitHub"),
+    "linkedin.com": ("linkedin", "LinkedIn"),
+    "instagram.com": ("instagram", "Instagram"),
+}
+
 class dotdict(dict):  # noqa: N801
     """
     A dictionary supporting dot notation.
@@ -161,6 +170,19 @@ class dotdict(dict):  # noqa: N801
         super().__init__(*args, **kwargs)
         for k, v in self.items():
             self[k] = dotdict.convert_to_dotdict(v)
+
+
+class Link:
+    def __init__(self, url: str):
+        self.url = url
+        parsed_url = urlparse(url)
+        if parsed_url.scheme not in ("http", "https"):
+            msg = "A link's URL scheme must be either HTTP or HTTPS"
+            raise ValueError(msg)
+        self.domain = ".".join(parsed_url.hostname.split(".")[-2:])
+        self.short_url = parsed_url.hostname + parsed_url.path
+        self.identifier = DOMAIN_SERVICE_MAPPING[self.domain][0]
+        self.name = DOMAIN_SERVICE_MAPPING[self.domain][1]
 
 
 class ResumeElement:
@@ -331,7 +353,7 @@ class Resume:
         return {key: ResumeSection(key, value) for key, value in self._data.items() if key in self._additional_section_keys}
 
     def preprocess(self):
-        pass
+        self._pp_compute_age()
 
     def _pp_compute_age(self):
         try:
