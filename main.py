@@ -176,14 +176,23 @@ class Link:
     def __init__(self, url: str):
         self.url = url
         parsed_url = urlparse(url)
-        if parsed_url.scheme not in ("http", "https"):
-            msg = "A link's URL scheme must be either HTTP or HTTPS"
+        if parsed_url.scheme in ("http", "https"):
+            self.domain = ".".join(parsed_url.hostname.split(".")[-2:])
+            self.short_url = parsed_url.hostname + parsed_url.path
+            try:
+                self.identifier = DOMAIN_SERVICE_MAPPING[self.domain][0]
+                self.name = DOMAIN_SERVICE_MAPPING[self.domain][1]
+            except KeyError:
+                self.identifier = "web"
+                self.name = "Website"
+        elif parsed_url.scheme == "mailto":
+            self.domain = ""
+            self.short_url = parsed_url.path
+            self.identifier = "mail"
+            self.name = "E-mail"
+        else:
+            msg = "A link's URL scheme must be either HTTP, HTTPS or mailto."
             raise ValueError(msg)
-        self.domain = ".".join(parsed_url.hostname.split(".")[-2:])
-        self.short_url = parsed_url.hostname + parsed_url.path
-        self.identifier = DOMAIN_SERVICE_MAPPING[self.domain][0]
-        self.name = DOMAIN_SERVICE_MAPPING[self.domain][1]
-
 
 class ResumeElement:
     def __init__(self, data: dict | dotdict, section_slug: str):
@@ -205,8 +214,8 @@ class ResumeElement:
             pass
 
         try:
-            return getattr(self, self._attribute_mapping[__name])
-        except KeyError:
+            return super().__getattribute__(self._attribute_mapping[__name])
+        except (AttributeError, KeyError):
             return None
 
     def __setattr__(self, __name: str, __value: Any) -> None:
@@ -340,6 +349,9 @@ class Resume:
     def __getitem__(self, __key: str) -> Any:
         return self._get_section(__key)
 
+    def __iter__(self):
+        return iter(self.sections.values())
+
     @property
     def sections(self):
         return {key: ResumeSection(key, value) for key, value in self._data.items() if key in self._section_keys}
@@ -354,6 +366,7 @@ class Resume:
 
     def preprocess(self):
         self._pp_compute_age()
+        self._pp_compute_links()
 
     def _pp_compute_age(self):
         try:
@@ -368,6 +381,13 @@ class Resume:
             self._data["person"]["age"] = "Error"
         except KeyError:
             pass  # Birthdate not displayed.
+
+    def _pp_compute_links(self):
+        for section in self:
+            logger.debug(section)
+            for element in section:
+                logger.debug(element.section)
+                element.link = Link(element.url) if element.url else None
 
     def render(self, template_name):
         template = env.get_template(template_name + ".html")
