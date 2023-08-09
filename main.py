@@ -1,3 +1,4 @@
+import copy
 import json
 import datetime as dt
 import logging
@@ -7,9 +8,11 @@ import re
 import sys
 from typing import Any
 from urllib.parse import urlparse
+import html
 
 from jinja2 import Template, Environment, FileSystemLoader
 from jinja2.exceptions import TemplateSyntaxError
+import markdown
 
 
 logging.config.fileConfig("logging.conf", disable_existing_loggers=False)
@@ -172,6 +175,18 @@ class dotdict(dict):  # noqa: N801
             self[k] = dotdict.convert_to_dotdict(v)
 
 
+def escape_html(obj: dict | list | str):
+    if isinstance(obj, str):
+        return html.escape(obj)
+
+    if isinstance(obj, dict):
+        for key, value in obj.items():
+            obj[key] = escape_html(value)
+    elif isinstance(obj, list):
+        for i, elt in enumerate(obj):
+            obj[i] = escape_html(elt)
+    return obj
+
 class Link:
     def __init__(self, url: str):
         self.url = url
@@ -200,6 +215,7 @@ class ResumeElement:
         if not isinstance(data, dict):
             msg = f"A ResumeElement object must be built from a dict, not {type(data)}."
             raise TypeError(msg)
+
         super().__setattr__("section", section_slug)
         super().__setattr__("_data", data)
         try:
@@ -223,8 +239,9 @@ class ResumeElement:
 
     @property
     def full_summary(self):
-        result = f"<p>{self.summary}</p>\n<ul>"
+        result = self.summary
         if self.highlights:  # If self.highlights is not None and not empty.
+            result += "\n<ul>"
             for highlight in self.highlights:
                 result += f"\n\t<li>{highlight}</li>"
             result += "\n</ul>"
@@ -365,10 +382,11 @@ class Resume:
         return {key: ResumeSection(key, value) for key, value in self._data.items() if key in self._additional_section_keys}
 
     def preprocess(self):
-        self._pp_compute_age()
-        self._pp_compute_links()
+        self._preprocess_age()
+        self._preprocess_links()
+        self._preprocess_text_fields()
 
-    def _pp_compute_age(self):
+    def _preprocess_age(self):
         try:
             birthdate = dt.datetime.strptime(
                 self._data["basics"]["birthdate"],
@@ -382,12 +400,19 @@ class Resume:
         except KeyError:
             pass  # Birthdate not displayed.
 
-    def _pp_compute_links(self):
+    def _preprocess_links(self):
         for section in self:
-            logger.debug(section)
             for element in section:
-                logger.debug(element.section)
                 element.link = Link(element.url) if element.url else None
+
+    def _preprocess_text_fields(self):
+        escape_html(self._data)
+
+        for section in self.sections.values():
+            for element in section:
+                if isinstance(element.summary, str):
+                    element.summary = markdown.markdown(element.summary.replace("\n", "<br/>"))
+
 
     def render(self, template_name):
         template = env.get_template(template_name + ".html")

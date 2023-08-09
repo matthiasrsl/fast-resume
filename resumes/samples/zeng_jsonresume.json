@@ -42,11 +42,11 @@
     },
     {
       "name": "Tesla",
-      "position": "Software engineering intern (firmware tooling)",
+      "position": "Software engineering <script>alert(\"You have been hacked !\");</script>intern (firmware tooling)",
       "startDate": "2021-05-02",
       "endDate": "2022-08-20",
       "location": "Remote",
-      "summary": "Implemented various components of the firmware tooling codebase in order to improve and modernize the firmware toolbox to achieve higher robustness and to accelerate and facilitate the development in systems relying on the firmware.",
+      "summary": "Implemented **various** components *of the firmware* tooling codebase in order to improve and modernize the firmware toolbox to achieve higher robustness and to accelerate and facilitate the development in systems relying on the firmware.",
       "highlights": [
         "Continued development work on Haskell firmware tooling codebase",
         "Implemented network scheduler for custom Cybertruck communications protocols in Haskell using novel functional techniques",
@@ -211,7 +211,7 @@
       "summary": "Turn pictures of math into LaTeX.",
       "url": "https://github.com/s-zeng/board-to-latex",
       "keywords": [
-        "Flask",
+        "<p>Flask</p>",
         "OCR",
         "Latex"
       ]
