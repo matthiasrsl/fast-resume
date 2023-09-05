@@ -1,5 +1,5 @@
 resumes/*
 !resumes/samples/
 output/*
-__pycache__/*
+**/__pycache__/*
 logs/
