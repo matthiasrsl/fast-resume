@@ -245,5 +245,15 @@
     {
       "name": "Hardworking"
     }
-  ]
+  ],
+  "meta": {
+    "language": "en",
+    "colors": {
+        "vibrant": "#f55757",
+        "muted": "#9c1f1f",
+        "light": "#aaa",
+        "dark": "#222",
+        "medium": "#505050"
+    }
+}
 }

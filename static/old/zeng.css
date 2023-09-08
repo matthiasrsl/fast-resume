@@ -34,59 +34,29 @@
     font-style: italic;
 }
 
-/* Material icons */
-
-/* fallback */
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v114/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
-}
-
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 22px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    color: var(--color-medium);
-    -moz-font-feature-settings: 'liga';
-    -moz-osx-font-smoothing: grayscale;
-}
 
 /* Generic layout and test formatting */
 
 header, section {
-    padding: 10px;
-}
-
-header {
-    margin-bottom: 30px;
+    padding: 20px;
 }
 
 .resume_wrapper {
     display: flex;
     height: 100%;
     flex-direction: column;
-    font-family: Merriweather;
+    font-family: Opensans;
     padding: 10px 20px;
 }
 
 a {
     text-decoration: none;
-    color: var(--color-dark);
+    color: #222;
 }
 
 p, h1, h2, h3, h4, h5 {
     margin: 0;
-    color: var(--color-dark);
+    color: #222;
 }
 
 h3 {
@@ -97,16 +67,20 @@ p, li {
     font-size: 12px;
 }
 
-svg path, .material-icons {
-    fill: var(--color-medium);
+svg path {
+    fill: #505050;
 }
 
 .nowrap {
     white-space: nowrap;
 }
 
-
 /* Header */
+
+header {
+    min-height: 4.5cm;
+    padding-bottom: 30px;
+}
 
 
 li {
@@ -152,18 +126,15 @@ header svg {
 
 
 h1.name {
-    margin-bottom: 3px;
+    margin-bottom: 9px;
     position: relative;
     left: -2px;
     font-family: Opensans;
-    /*color: #27344D;*/
-    color: var(--color-muted);
+    color: #27344D;
     font-size: 2.5em;
 }
 .profile_infos p {
     font-size: 16px;
-    font-family: Opensans;
-    padding-right: 80px;
 }
 
 /* Contact info */
@@ -181,9 +152,7 @@ h1.name {
 .contact-info li {
     font-size: 12px;
     display: flex;
-    font-family: Opensans;
     margin-bottom: 1px;
-    color: var(--color-dark);
 }
 
 .contact_text {
@@ -193,21 +162,14 @@ h1.name {
 
 .contact-info svg {
     position: relative;
-}
-
-.contact-info .material-icons {
-    position: relative;
     top: -2px;
-    left: -1px;
-    margin: auto 1px;
 }
 
 /* Title and about me */
 
 .about-me {
-    max-width: 67%;
+    max-width: 60%;
     margin-top: 10px;
-    text-align: justify;
 }
 
 .resume_title {
@@ -241,33 +203,37 @@ section.curriculum {
     padding-top: 0;
 }
 
-.resumesection {
-    margin-bottom: 15px;
+.curriculum > div {
+    margin-bottom: 10px;
 }
 
 h3 {
-    color: var(--color-muted);
-    font-size: 14px;
-    margin-bottom: 2px;
+    color: #f55757;
+    font-size: 22px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid var(--color-muted);
+    border-bottom: 3px solid #f55757;
 }
 
 .exp {
-    margin-bottom: 3px;
-    padding-bottom: 6px;
-    border-bottom: 1px dashed var(--color-light);
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #aaa;
 }
 
 .exp.last {
     border-bottom: none;
-    padding-bottom: 0;
 }
 
 .exp_label {
     font-size: 16px;
-    font-style: italic;
+    position: relative;
+    top: 2px;
+}
+
+.company {
+    color: #9c1f1f;
 }
 
 .exp p {
@@ -276,51 +242,27 @@ h3 {
 
 .exp_dates_and_place, .acc_name, .lang_info {
     font-family: Opensans;
-    color: var(--color-medium);
+    color: #505050;
     font-size: 12px;
-    text-transform: uppercase;
 }
 
-.exp .company {
-    display: inline-block;
-    margin-top: 4px;
-}
 
-.exp_dates {
-    text-transform: none;
-    font-family: "DejaVu Serif";
-    font-style: italic;
-}
-
-.exp_dates_and_location {
-    white-space: nowrap;
-}
-
-.info .exp_dates_and_location {
-    white-space: normal;
-}
-
-.info .exp_keywords, .info .exp_dates, .info .exp_place {
-    margin-right: 22px;
-}
 
 .exp_keywords, .exp_dates, .exp_place {
     margin-right: 22px;
 }
 
-.exp .keyword {
-    font-size: 12px;
-    padding: 1px 5px;
+.exp_dates, .exp_place {
+    white-space: nowrap;
 }
 
-.lang_level, .school a, .company a, .company {
-    color: var(--color-vibrant) !important;
+.acc_name, .acc_name a, .lang_level, .school a, .company a {
+    color: #27344D;
     font-weight: bold;
 }
 
 .exp_description {
     font-family: Opensans;
-    margin-top: 3px;
 }
 
 .exp svg {
@@ -336,17 +278,8 @@ h3 {
 
 /* Accomplishements (projects) */
 
-.exp_accomplishments .exp_label {
-    font-size: 12px;
-    font-weight: bold;
-    font-style: normal;
-    font-family: Opensans;
-    position: relative;
-    top: 3px;
-}
-
-.accomplishement .acc_link a, .links a {
-    color: var(--color-medium);
+.accomplishement .acc_link a {
+    color: #505050;
     font-family: Opensans;
 }
 
@@ -360,18 +293,6 @@ h3 {
     display: inline-block;
     max-height: 18px;
     overflow: visible;
-    text-transform: none;
-    font-family: Opensans;
-    font-size: 12px;
-}
-
-.exp_label .acc_link a {
-    font-weight: bold;
-    font-style: normal;
-}
-
-.acc_name {
-    text-transform: none;
 }
 
 .accomplishement .exp_description {
@@ -382,7 +303,7 @@ h3 {
 
 .ref_name {
     font-size: 14px;
-    color: var(--color-dark);
+    color: #222;
     font-weight: bold;
     font-style: italic;
 }
@@ -390,7 +311,7 @@ h3 {
 .ref_email {
     font-style: italic;
     font-family: Opensans;
-    color: var(--color-medium);
+    color: #505050;
 
 }
 
@@ -403,14 +324,11 @@ h3 {
 
 .lang_name {
     font-size: 16px;
-    font-style: italic;
-    display: block;
-    margin: 5px 0 3px 0;
 }
 
 .lang_level_refine, .certification_label {
     font-weight: bold;
-    color: var(--color-medium);
+    color: #505050;
 }
 
 
@@ -426,7 +344,7 @@ section.info {
 }
 
 .info > div {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .info ul {
@@ -434,73 +352,36 @@ section.info {
     margin: 0;
 }
 
-/* Skill section */
 
-.skillcategory {
-    margin-bottom: 3px;
-    padding: 4px 0 7px;
-    border-bottom: 1px dashed var(--color-light);
-}
-
-.skillcategory.last {
-    border-bottom: none;
-}
-
-.skills h4 {
-    font-family: Merriweather;
-    color: var(--color-muted);
-    font-size: 14px;
-    margin-bottom: 0;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.skills .skill-name {
-    font-size: 12px;
-    font-family: Opensans;
-}
-
-.skills .skill-name.proficient {
-    font-weight: bold;
-}
-
-.skills .skill-name.weak {
-    color: var(--color-medium);
-    font-style: italic;
-}
-
-.keyword {
+.skill-list li, .keyword {
     display: inline-block;
-    border: 1px var(--color-light); /* color bbb */
+    border-radius: 5px;
+    border: 1px #bbb;
     padding: 2px 5px;
     margin-top: 5px;
     margin-right: 3px;
 }
+.skill-list li {
+    font-size: 14px;
+}
 
-.keyword.secondary {
+.skill-list li, .keyword.secondary {
     border-style: dashed;
 }
 
-.keyword {
+.skill-list .proficient, .keyword {
     border-style: solid;
 }
-
-/* End of skill section */
 
 
 .traits li {
     margin-top: 5px;
     text-transform: capitalize;
-    font-style: italic;
 }
 
 
 .hobbies li {
     margin-top: 5px;
-}
-
-.hobby_name {
-    font-style: italic;
 }
 
 .hobby_dates {
@@ -509,6 +390,6 @@ section.info {
 
 .hobby_refine {
     font-size: 12px;
-    color: var(--color-medium);
+    color: #505050;
     font-family: Opensans;
 }
