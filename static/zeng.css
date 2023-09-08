@@ -254,61 +254,61 @@ h3 {
     border-bottom: 2px solid var(--color-muted);
 }
 
-.exp {
+.elt {
     margin-bottom: 3px;
     padding-bottom: 6px;
     border-bottom: 1px dashed var(--color-light);
 }
 
-.exp.last {
+.elt.last {
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.exp_label {
+.elt_label {
     font-size: 16px;
     font-style: italic;
 }
 
-.exp p {
+.elt p {
     line-height: 150%;
 }
 
-.exp_dates_and_place, .acc_name, .lang_info {
+.elt_dates_and_place, .acc_name, .lang_info {
     font-family: Opensans;
     color: var(--color-medium);
     font-size: 12px;
     text-transform: uppercase;
 }
 
-.exp .company {
+.elt .company {
     display: inline-block;
     margin-top: 4px;
 }
 
-.exp_dates {
+.elt_dates {
     text-transform: none;
     font-family: "DejaVu Serif";
     font-style: italic;
 }
 
-.exp_dates_and_location {
+.elt_dates_and_location {
     white-space: nowrap;
 }
 
-.info .exp_dates_and_location {
+.info .elt_dates_and_location {
     white-space: normal;
 }
 
-.info .exp_keywords, .info .exp_dates, .info .exp_place {
+.info .elt_keywords, .info .elt_dates, .info .elt_place {
     margin-right: 22px;
 }
 
-.exp_keywords, .exp_dates, .exp_place {
+.elt_keywords, .elt_dates, .elt_place {
     margin-right: 22px;
 }
 
-.exp .keyword {
+.elt .keyword {
     font-size: 12px;
     padding: 1px 5px;
 }
@@ -318,25 +318,25 @@ h3 {
     font-weight: bold;
 }
 
-.exp_description {
+.elt_description {
     font-family: Opensans;
     margin-top: 3px;
 }
 
-.exp svg {
+.elt svg {
     position: relative;
     top: 8px;
     width: 16px;
     margin-top: -7px;
 }
 
-.experience .links {
+.elterience .links {
     margin-bottom: 5px;
 }
 
 /* Accomplishements (projects) */
 
-.exp_accomplishments .exp_label {
+.elt_accomplishments .elt_label {
     font-size: 12px;
     font-weight: bold;
     font-style: normal;
@@ -365,7 +365,7 @@ h3 {
     font-size: 12px;
 }
 
-.exp_label .acc_link a {
+.elt_label .acc_link a {
     font-weight: bold;
     font-style: normal;
 }
@@ -374,7 +374,7 @@ h3 {
     text-transform: none;
 }
 
-.accomplishement .exp_description {
+.accomplishement .elt_description {
     margin-top: 3px;
 }
 
@@ -396,7 +396,7 @@ h3 {
 
 /* Languages */
 
-.exp.lang {
+.elt.lang {
     margin-bottom: 7px;
     padding-bottom: 7px;
 }

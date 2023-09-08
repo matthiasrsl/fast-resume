@@ -25,7 +25,8 @@
         "username": "s-zeng1",
         "url": "https://linkedin.com/in/s-zeng"
       }
-    ]
+    ],
+    "transportation": "Driver's license"
   },
   "work": [
     {
@@ -191,7 +192,8 @@
   "references": [
     {
       "name": "Jane Doe",
-      "reference": "Hire this guy ! He has 7 internships !"
+      "reference": "Hire this guy ! He has 7 internships !",
+      "email": "mailto:janedoe@janestreet.com"
     }
   ],
   "projects": [
