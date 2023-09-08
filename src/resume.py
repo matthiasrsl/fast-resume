@@ -12,6 +12,7 @@ from jinja2 import Environment, FileSystemLoader
 from src.constants import DEFAULT_SECTIONS
 from src.resume_section import ResumeSection
 from src.utils import Link, dotdict, escape_html
+import contextlib
 
 logging.config.fileConfig("logging.conf", disable_existing_loggers=False)
 logger = logging.getLogger("LightCvMaker")
@@ -140,6 +141,7 @@ class Resume:
 
     def preprocess(self):
         self._preprocess_age()
+        self._preprocess_dates()
         self._preprocess_links()
         self._preprocess_text_fields()
 
@@ -156,6 +158,13 @@ class Resume:
             self._data["person"]["age"] = "Error"
         except KeyError:
             pass  # Birthdate not displayed.
+
+    def _preprocess_dates(self):
+        for section in self:
+            for element in section:
+                with contextlib.suppress(TypeError):
+                    element.startDate = dt.datetime.strptime(element.startDate, "%Y-%m-%d").astimezone(None)
+                    element.endDate = dt.datetime.strptime(element.endDate, "%Y-%m-%d").astimezone(None)
 
     def _preprocess_links(self):
         for section in self:

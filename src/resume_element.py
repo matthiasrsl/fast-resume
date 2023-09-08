@@ -1,8 +1,9 @@
+import logging
 from typing import Any
 from src.constants import SECTION_ATTRIBUTE_MAPPING
 from src.utils import dotdict
 
-
+logger = logging.getLogger("LightCvMaker")
 class ResumeElement:
     def __init__(self, data: dict | dotdict, section_slug: str):
         # logger.debug("Creating resume element with data: %s.", data)
@@ -21,12 +22,11 @@ class ResumeElement:
         try:
             return self._data[__name]
         except KeyError:
-            pass
+            try:
+                return self._data[self._attribute_mapping[__name]]
+            except (KeyError):
+                return None
 
-        try:
-            return super().__getattribute__(self._attribute_mapping[__name])
-        except (AttributeError, KeyError):
-            return None
 
     def __setattr__(self, __name: str, __value: Any) -> None:
         self._data[__name] = __value
@@ -40,3 +40,11 @@ class ResumeElement:
                 result += f"\n\t<li>{highlight}</li>"
             result += "\n</ul>"
         return result
+
+    @property
+    def dates(self) -> str:
+        if self.startDate and self.endDate:
+            return f"{self.startDate.strf} - {self.endDate}"
+        if self.startDate:
+            return f"Since {self.startDate}"
+        return f"Until {self.endDate}"
