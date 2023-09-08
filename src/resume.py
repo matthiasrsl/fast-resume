@@ -183,4 +183,4 @@ class Resume:
     def render(self, template_name):
         template = env.get_template(template_name + ".html")
         with Path(f"output/{re.sub(r'/', '_', self.name)}.html").open("w") as output_file:
-            output_file.write(template.render(self._data))
+            output_file.write(template.render(resume=self))
