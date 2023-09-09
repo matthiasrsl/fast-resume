@@ -29,7 +29,7 @@ class dotdict(dict):  # noqa: N801
 
 def escape_html(obj: dict | list | str):
     if isinstance(obj, str):
-        return html.escape(obj)
+        return html.escape(obj, quote=False)
 
     if isinstance(obj, dict):
         for key, value in obj.items():

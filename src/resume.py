@@ -1,3 +1,4 @@
+import contextlib
 import datetime as dt
 import json
 import logging
@@ -12,12 +13,11 @@ from jinja2 import Environment, FileSystemLoader
 from src.constants import DEFAULT_SECTIONS
 from src.resume_section import ResumeSection
 from src.utils import Link, dotdict, escape_html
-import contextlib
 
 logging.config.fileConfig("logging.conf", disable_existing_loggers=False)
 logger = logging.getLogger("LightCvMaker")
 
-env = Environment(loader=FileSystemLoader("templates/"), autoescape=True)
+env = Environment(loader=FileSystemLoader("templates/"), autoescape=False)  # noqa: S701
 
 
 class Resume:
