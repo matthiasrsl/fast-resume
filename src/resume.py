@@ -1,6 +1,7 @@
 import contextlib
 import datetime as dt
 import json
+import locale
 import logging
 import logging.config
 import re
@@ -19,10 +20,14 @@ logger = logging.getLogger("LightCvMaker")
 
 env = Environment(loader=FileSystemLoader("templates/"), autoescape=False)  # noqa: S701
 
+class ResumeParsingError(Exception):
+    pass
+
 
 class Resume:
     def __init__(self, name):
         logger.debug("Creating Resume %s.", name)
+
         with Path(f"resumes/{name}.json").open() as file:
             raw_data = file.read()
             self._data = dotdict(json.loads(raw_data))
@@ -31,6 +36,15 @@ class Resume:
             self._section_keys = self._technical_sections_keys - {"basics", "meta"}
             self._additional_section_keys = self._section_keys - DEFAULT_SECTIONS
             self._default_section_keys = self._section_keys - self._additional_section_keys
+
+        try:
+            locale.setlocale(locale.LC_ALL, (self._data.meta.language, "utf8"))
+        except locale.Error as e:
+            msg = f"Invalid language code : {self._data.meta.language}. Maybe the locale is uninstalled on the system."
+            raise ResumeParsingError(msg) from e
+
+        if self._data.meta.date_format is None:
+            self._data.meta.date_format = "%x"
 
             # try:
             #     birthdate = dt.datetime.strptime(

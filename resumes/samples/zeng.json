@@ -249,7 +249,8 @@
     }
   ],
   "meta": {
-    "language": "en",
+    "language": "fr",
+    "date_format": "%B %Y",
     "colors": {
         "vibrant": "#f55757",
         "muted": "#9c1f1f",
