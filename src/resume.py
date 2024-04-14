@@ -20,6 +20,7 @@ logger = logging.getLogger("LightCvMaker")
 
 env = Environment(loader=FileSystemLoader("templates/"), autoescape=False)  # noqa: S701
 
+
 class ResumeParsingError(Exception):
     pass
 
@@ -117,7 +118,7 @@ class Resume:
                 return self._data[name]
             return self.sections[name]
         except KeyError as e:
-            msg = "Resume has no section '{name}'."
+            msg = f"Resume has no section '{name}'."
             raise KeyError(msg) from e
 
     def __getattr__(self, __name):
@@ -140,17 +141,13 @@ class Resume:
     @property
     def default_sections(self):
         return {
-            key: ResumeSection(key, value)
-            for key, value in self._data.items()
-            if key in self._default_section_keys
+            key: ResumeSection(key, value) for key, value in self._data.items() if key in self._default_section_keys
         }
 
     @property
     def additional_sections(self):
         return {
-            key: ResumeSection(key, value)
-            for key, value in self._data.items()
-            if key in self._additional_section_keys
+            key: ResumeSection(key, value) for key, value in self._data.items() if key in self._additional_section_keys
         }
 
     def preprocess(self):
@@ -192,7 +189,6 @@ class Resume:
             for element in section:
                 if isinstance(element.summary, str):
                     element.summary = markdown.markdown(element.summary.replace("\n", "<br/>"))
-
 
     def render(self, template_name):
         template = env.get_template(template_name + ".html")

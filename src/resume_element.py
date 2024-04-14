@@ -1,9 +1,14 @@
 import logging
 from typing import Any
+
+import markdown
+
 from src.constants import SECTION_ATTRIBUTE_MAPPING
 from src.utils import dotdict
 
 logger = logging.getLogger("LightCvMaker")
+
+
 class ResumeElement:
     def __init__(self, data: dict | dotdict, section_slug: str):
         # logger.debug("Creating resume element with data: %s.", data)
@@ -24,9 +29,8 @@ class ResumeElement:
         except KeyError:
             try:
                 return self._data[self._attribute_mapping[__name]]
-            except (KeyError):
+            except KeyError:
                 return None
-
 
     def __setattr__(self, __name: str, __value: Any) -> None:
         self._data[__name] = __value
@@ -35,11 +39,11 @@ class ResumeElement:
     def full_summary(self):
         result = self.summary or ""
         if self.highlights:  # If self.highlights is not None and not empty.
-            result += "\n<ul>"
+            # result += "\n<ul>"
             for highlight in self.highlights:
-                result += f"\n\t<li>{highlight}</li>"
-            result += "\n</ul>"
-        return result
+                result += f"\n- {highlight}"
+            # result += "\n</ul>"
+        return markdown.markdown(result)
 
     @property
     def dates(self) -> str:

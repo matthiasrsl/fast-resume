@@ -67,6 +67,11 @@
           </span>
           {% endif %}
         </span>
+        {% if elt.link %}
+        <span class="links">
+          {{ link(elt.link) }}
+        </span>
+        {% endif %}
         {% if elt.keywords %}
         <span class="elt_keywords nowrap">
           {% for keyword in elt.keywords %}
@@ -76,17 +81,12 @@
           {% endfor %}
         </span>
         {% endif %}
-        {% if elt.link %}
-        <span class="links">
-          {{ link(elt.link) }}
-        </span>
-        {% endif %}
       </span>
     </p>
     
-    <p class="elt_description">
+    <div class="elt_description">
       {{ elt.full_summary }}
-    </p>
+    </div>
   </div>
 </div>
 {%- endmacro %}
