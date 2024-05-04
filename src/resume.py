@@ -47,71 +47,6 @@ class Resume:
         if self._data.meta.date_format is None:
             self._data.meta.date_format = "%x"
 
-            # try:
-            #     birthdate = dt.datetime.strptime(
-            #         self._data["person"]["birthdate"], "%Y-%m-%d"
-            #     )
-            #     self._data["person"]["age"] = str(
-            #         int((dt.datetime.now() - birthdate).days / 365.25)
-            #     )
-            # except ValueError:
-            #     self._data["person"]["age"] = "Error"
-            # except KeyError:
-            #     pass  # Birthdate not displayed.
-
-            # for i, account in enumerate(self._data["person"]["usernames"]):
-            #     if account["service"] in services:
-            #         self._data["person"]["usernames"][i]["link"] = (
-            #             services[account["service"]][1] + account["username"]
-            #         )
-
-            # for section in self._data["sections"]:
-            #     if section["type"] == "experience":
-            #         for element in section["contents"]:
-            #             if "description" in element:
-            #                 element["description"] = re.sub(r"\n", "<br/>", element["description"])
-            #             github = None
-            #             if "links" in element:
-            #                 for link in element["links"]:
-            #                     if link["service"] == "github":
-            #                         github = link
-            #             element["github"] = github
-            #             keywords = []
-            #             if "keywords" in element:
-            #                 for keyword in element["keywords"]:
-            #                     if isinstance(keyword, str):
-            #                         keyword = {"name": keyword}
-            #                     keywords.append(keyword)
-            #             element["keywords"] = keywords
-            #     elif section["type"] == "skills":
-            #         categories = []
-            #         for category in section["contents"]:
-            #             skills = []
-            #             for skill in category["skills"]:
-            #                 if isinstance(skill, str):
-            #                     skill = {"name": skill}
-            #                 skill["score"] = skill["score"] if "score" in skill else 50
-            #                 skills.append(skill)
-
-            #             proficient_skills = sorted([
-            #                 skill for skill in skills if skill["score"] >= 70
-            #             ], key=lambda skill: 100-skill["score"])
-            #             non_proficient_skills = sorted([
-            #                 skill
-            #                 for skill in skills
-            #                 if (skill["score"] < 70 and skill["score"] >= 10)
-            #             ], key=lambda skill: 100-skill["score"])
-            #             weak_skills = sorted([skill for skill in skills if skill["score"] < 10], key=lambda skill: 100-skill["score"])
-
-            #             category["skills"] = proficient_skills + non_proficient_skills + weak_skills
-            #             categories.append(category)
-            #         section["contents"] = categories
-
-            # self._data["sections"] = [
-            #     section for section in self._data["sections"] if section["type"] != "none"
-            # ]
-            # self._data["sections"].sort(key=lambda section: section["priority"], reverse=True)
-
     def _get_section(self, name):
         try:
             if name in ("basics", "meta"):
@@ -122,10 +57,6 @@ class Resume:
             raise KeyError(msg) from e
 
     def __getattr__(self, __name):
-        # try:
-        #     return super().__getattr__(self, name)
-        # except AttributeError:
-        #     return self._data[name]
         return self._get_section(__name)
 
     def __getitem__(self, __key: str) -> Any:

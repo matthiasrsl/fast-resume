@@ -11,7 +11,6 @@ logger = logging.getLogger("LightCvMaker")
 
 class ResumeElement:
     def __init__(self, data: dict | dotdict, section_slug: str):
-        # logger.debug("Creating resume element with data: %s.", data)
         if not isinstance(data, dict):
             msg = f"A ResumeElement object must be built from a dict, not {type(data)}."
             raise TypeError(msg)
@@ -39,10 +38,8 @@ class ResumeElement:
     def full_summary(self):
         result = self.summary or ""
         if self.highlights:  # If self.highlights is not None and not empty.
-            # result += "\n<ul>"
             for highlight in self.highlights:
                 result += f"\n- {highlight}"
-            # result += "\n</ul>"
         return markdown.markdown(result)
 
     @property

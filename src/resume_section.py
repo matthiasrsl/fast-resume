@@ -3,7 +3,6 @@ from src.resume_element import ResumeElement
 
 class ResumeSection:
     def __init__(self, key, elements: list[dict]) -> None:
-        # logger.debug("Creating resume section with elements: %s", elements)
         if not isinstance(elements, list):
             msg = f"A ResumeSection objects must be build from a list, not {type(elements)}."
             raise TypeError(msg)
