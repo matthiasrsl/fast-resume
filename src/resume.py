@@ -81,6 +81,14 @@ class Resume:
             key: ResumeSection(key, value) for key, value in self._data.items() if key in self._additional_section_keys
         }
 
+    @property
+    def main_sections(self):
+        return [self.sections[section_key] for section_key in self.meta.main_sections]
+
+    @property
+    def aside_sections(self):
+        return [self.sections[section_key] for section_key in self.meta.aside_sections]
+
     def preprocess(self):
         self._preprocess_age()
         self._preprocess_dates()
@@ -122,6 +130,7 @@ class Resume:
                     element.summary = markdown.markdown(element.summary.replace("\n", "<br/>"))
 
     def render(self, template_name):
+        print(self.main_sections)
         template = env.get_template(template_name + ".html")
         with Path(f"output/{re.sub(r'/', '_', self.name)}.html").open("w") as output_file:
             output_file.write(template.render(resume=self))

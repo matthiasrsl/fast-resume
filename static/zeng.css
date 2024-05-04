@@ -63,21 +63,24 @@
 
 /* Generic layout and test formatting */
 
-header, section {
-    padding: 10px;
-}
-
-header {
-    margin-bottom: 30px;
-}
-
 .resume_wrapper {
     display: flex;
-    height: 100%;
+    height: 29cm;
     flex-direction: column;
     font-family: Merriweather;
     padding: 10px 20px;
 }
+
+header, section {
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+
 
 a {
     text-decoration: none;
@@ -232,17 +235,23 @@ h1.name {
     display: flex;
 }
 
-
-/* Curriculum section */
-
-section.curriculum {
+section.main_sections, section.aside_sections {
     display: flex;
     flex-direction: column;
     padding-top: 0;
 }
 
+section.main_sections {
+    flex-shrink: 1;
+}
+
+section.aside_sections {
+    flex-shrink: 2;
+}
+
 .resumesection {
     margin-bottom: 15px;
+    display: inline-block;
 }
 
 h3 {

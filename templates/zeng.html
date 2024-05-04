@@ -181,8 +181,13 @@
   </header>
 
   <div class="resume_body">
-    <section class="curriculum">
-      {% for section in resume %}
+    <section class="main_sections">
+      {% for section in resume.main_sections %}
+        {{ sectionmacro(section) }}
+      {% endfor %}
+    </section>
+    <section class="aside_sections">
+      {% for section in resume.aside_sections %}
         {{ sectionmacro(section) }}
       {% endfor %}
     </section>

@@ -6,7 +6,7 @@
     "email": "contact@simonzeng.com",
     "phone": "1 (613) 983-9079",
     "url": "https://simonzeng.com",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adisciping elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adisciping elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -249,7 +249,7 @@
     }
   ],
   "meta": {
-    "language": "fr",
+    "language": "en",
     "date_format": "%B %Y",
     "colors": {
       "vibrant": "#f55757",
@@ -257,6 +257,17 @@
       "light": "#aaa",
       "dark": "#222",
       "medium": "#505050"
-    }
+    },
+    "main_sections": [
+      "work",
+      "certificates",
+      "references"
+    ],
+    "aside_sections": [
+      "projects",
+      "open_source",
+      "languages",
+      "education"
+    ]
   }
 }
