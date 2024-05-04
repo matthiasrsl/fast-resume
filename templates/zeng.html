@@ -67,7 +67,7 @@
           </span>
           {% endif %}
         </span>
-        {% if elt.link %}
+        {% if elt.link and elt.label %}
         <span class="links">
           {{ link(elt.link) }}
         </span>

@@ -229,7 +229,7 @@
       "url": "https://github.com/eraserhd/parinfer-rust"
     },
     {
-      "summary": "`59ef37d`Implement shortcut to dynamically use other telescopes",
+      "summary": "`59ef37d` Implement shortcut to dynamically use other telescopes",
       "url": "https://github.com/nvim-lua/telescope.nvim",
       "keywords": [
         "Lua",
@@ -267,6 +267,7 @@
       "projects",
       "open_source",
       "languages",
+      "skills",
       "education"
     ]
   }
