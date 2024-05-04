@@ -95,7 +95,7 @@
       "url": "https://eff.org/",
       "startDate": "2019-06-28",
       "endDate": "2019-08-23",
-      "summary": "Description…"
+      "summary": "Helped gathering information regarding current open source software lawsuits."
     }
   ],
   "education": [
@@ -114,10 +114,10 @@
   ],
   "awards": [
     {
-      "title": "Award",
+      "title": "Best Human",
       "date": "2014-11-01",
       "awarder": "Company",
-      "summary": "There is no spoon."
+      "summary": "With special thanks from the coffee guy."
     }
   ],
   "certificates": [
@@ -252,11 +252,11 @@
     "language": "fr",
     "date_format": "%B %Y",
     "colors": {
-        "vibrant": "#f55757",
-        "muted": "#9c1f1f",
-        "light": "#aaa",
-        "dark": "#222",
-        "medium": "#505050"
+      "vibrant": "#f55757",
+      "muted": "#9c1f1f",
+      "light": "#aaa",
+      "dark": "#222",
+      "medium": "#505050"
     }
-}
+  }
 }
