@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import markdown
+import yaml
 from jinja2 import Environment, FileSystemLoader
 
 from src.constants import DEFAULT_SECTIONS
@@ -29,10 +30,19 @@ class Resume:
     def __init__(self, name):
         logger.debug("Creating Resume %s.", name)
 
-        with Path(f"resumes/{name}.json").open() as file:
+        resume_file = Path(f"resumes/{name}")
+
+        with resume_file.open() as file:
             raw_data = file.read()
-            self._data = dotdict(json.loads(raw_data))
-            self.name = name
+            if resume_file.suffix == ".json":
+                parsed_data = json.loads(raw_data)
+            elif resume_file.suffix in (".yaml", ".yml"):
+                parsed_data = yaml.safe_load(raw_data)
+            else:
+                msg = f"File extension '{resume_file.suffix}' not supported"
+                raise ValueError(msg)
+            self._data = dotdict(parsed_data)
+            self.name = resume_file.stem
             self._technical_sections_keys = set(self._data)
             self._section_keys = self._technical_sections_keys - {"basics", "meta"}
             self._additional_section_keys = self._section_keys - DEFAULT_SECTIONS

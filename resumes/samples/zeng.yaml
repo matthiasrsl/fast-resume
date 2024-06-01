@@ -1,0 +1,202 @@
+---
+basics:
+  name: Simon Truffaut
+  label: Software Engineer
+  image: ''
+  email: contact@simonzeng.com
+  phone: 1 (613) 983-9079
+  url: https://simonzeng.com
+  summary: Lorem ipsum dolor sit amet, consectetur adisciping elit. Sed non risus.
+    Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed,
+    dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue,
+    euismod non, mi.
+  location:
+    address: 2712 Broadway St
+    postalCode: CA 94115
+    city: San Francisco
+    countryCode: US
+    region: California
+  profiles:
+  - network: Github
+    username: s-zeng
+    url: https://github.com/s-zeng
+  - network: LinkedIn
+    username: s-zeng1
+    url: https://linkedin.com/in/s-zeng
+  transportation: Driver's license
+work:
+- name: Jane Street
+  position: Software engineering intern
+  url: https://www.janestreet.com/
+  startDate: '2022-01-03'
+  endDate: '2022-04-26'
+  location: New York, New York
+  keywords:
+  - OCaml
+  - Code Generation
+- name: Tesla
+  position: Software engineering intern (firmware tooling)
+  startDate: '2021-05-02'
+  endDate: '2022-08-20'
+  location: Remote
+  summary: Implemented **various** components *of the firmware* tooling codebase in
+    order to improve and modernize the firmware toolbox to achieve higher robustness
+    and to accelerate and facilitate the development in systems relying on the firmware.
+  highlights:
+  - Continued development work on Haskell firmware tooling codebase
+  - Implemented network scheduler for custom Cybertruck communications protocols in
+    Haskell using novel functional techniques
+  - Designed and implemented C API code generation tools for embedded real-time vehicle
+    transmissions in Cybertruck.
+  keywords:
+  - Haskell
+  - Firmware
+  - C
+- name: TQ Tezos
+  position: Software engineering intern (blockchain)
+  startDate: '2020-09-04'
+  endDate: '2020-12-22'
+  location: New York, New York
+  summary: "・Authored Tezos smart contracts in a Haskell EDSL to automate proprietary
+    applications for permissioned blockchains.\n"
+  keywords:
+  - Blockchain
+  - Haskell
+  - Python
+  - Apache Spark
+  - Scala
+- name: Tesla
+  position: Software engineering intern (firmware tooling)
+  startDate: '2020-01-19'
+  endDate: '2020-08-13'
+  location: Palo Alto, California
+  summary: |-
+    ・Developed and maintained large Haskell code base responsible for automated firmware documentation, code, and signal generation.
+    ・Improved Haskell products' performance and runtimes by over 20% laziness-related space leaks and rewriting hot code paths.
+    ・Responsible for design and implementation of firmware verification infrastructure employed by entire organization.
+  keywords:
+  - Haskell
+  - Python
+  - Java
+volunteer:
+- organization: Electronic Frontier Foundation
+  position: Volunteer
+  url: https://eff.org/
+  startDate: '2019-06-28'
+  endDate: '2019-08-23'
+  summary: Helped gathering information regarding current open source software lawsuits.
+education:
+- institution: University of Waterloo
+  url: https://uwaterloo.ca/
+  area: Computer Science
+  studyType: Bachelor's degree
+  startDate: '2021-09-08'
+  endDate: '2022-05-20'
+  score: '4.0'
+  courses:
+  - DB1101 - Basic SQL
+awards:
+- title: Best Human
+  date: '2014-11-01'
+  awarder: Company
+  summary: With special thanks from the coffee guy.
+certificates:
+- name: AWS Certified Developer - Associate
+  date: '2023-05-10'
+  issuer: AWS
+  url: https://aws.amazon.com
+publications:
+- name: Blockchain-based Decentralized Identity Management for Healthcare Systems
+  publisher: TQ Tezos
+  releaseDate: '2021-01-23'
+  url: https://arxiv.org/abs/2307.16239
+  summary: Blockchain-based decentralized identity management provides a promising
+    solution to improve the security and privacy of healthcare systems and make them
+    scalable. Traditional Identity Management Systems are centralized, which makes
+    them single-point-of-failure, vulnerable to attacks and data breaches, and non-scalable.
+    In contrast, decentralized identity man…
+skills:
+- name: Firmware tooling
+  level: Senior
+  keywords:
+  - Haskell
+  - Systems
+  - Python
+- name: Blockchain
+  level: Intermediate
+  keywords:
+  - Smart contract
+  - Python
+- name: Web Development
+  level: Intermediate
+  keywords:
+  - HTML
+  - CSS
+  - JavaScript
+  - React
+languages:
+- language: English
+  fluency: Native speaker
+- language: Spanish
+  fluency: Conversational
+  level: B2
+interests:
+- name: Open source
+  keywords:
+  - Development
+  - Legal Aspect
+- name: Reading / Writing
+references:
+- name: Jane Doe
+  reference: Hire this guy ! He has 7 internships !
+  email: mailto:janedoe@janestreet.com
+projects:
+- summary: Python bindings for Dhall, a functional configuration language.
+  keywords:
+  - Rust
+  - Python
+  - Dhall
+  url: https://github.com/s-zeng/dhall-python
+- name: Board to latex
+  startDate: '2019-01-01'
+  endDate: '2021-01-01'
+  summary: Turn pictures of math into LaTeX.
+  url: https://github.com/s-zeng/board-to-latex
+  keywords:
+  - Flask
+  - OCR
+  - Latex
+open_source:
+- summary: "`835541e` Add support for Dune"
+  keywords:
+  - Rust
+  - Vim
+  url: https://github.com/eraserhd/parinfer-rust
+- summary: "`59ef37d` Implement shortcut to dynamically use other telescopes"
+  url: https://github.com/nvim-lua/telescope.nvim
+  keywords:
+  - Lua
+  - Vim Script
+traits:
+- name: Proactive
+- name: Communicator
+- name: Hardworking
+meta:
+  language: en
+  date_format: "%B %Y"
+  colors:
+    vibrant: "#f55757"
+    muted: "#9c1f1f"
+    light: "#aaa"
+    dark: "#222"
+    medium: "#505050"
+  main_sections:
+  - work
+  - certificates
+  - references
+  aside_sections:
+  - projects
+  - open_source
+  - languages
+  - skills
+  - education
