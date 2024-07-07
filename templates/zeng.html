@@ -31,7 +31,7 @@
 {%- endmacro %}
 
 {% macro element(elt, loop, tags) -%}
-<div class="elt education_elt elt_{{ tags }} {% if loop.last %}last{% endif %}">
+<div class="elt education_elt elt_{{ elt.section }} {% if loop.last %}last{% endif %}">
   <div>
     <p class="elt_label">
       {% if elt.label %}

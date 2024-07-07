@@ -264,8 +264,8 @@ h3 {
 }
 
 .elt {
-    margin-bottom: 3px;
-    padding-bottom: 6px;
+    margin-bottom: 7px;
+    padding-bottom: 10px;
     border-bottom: 1px dashed var(--color-light);
 }
 
@@ -503,6 +503,10 @@ section.info {
 
 .keyword {
     border-style: solid;
+}
+
+.elt_skills .elt_keywords {
+    white-space: wrap;
 }
 
 /* End of skill section */
