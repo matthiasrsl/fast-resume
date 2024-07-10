@@ -8,7 +8,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-import markdown
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -17,7 +16,7 @@ from src.resume_section import ResumeSection
 from src.utils import Link, dotdict, escape_html
 
 logging.config.fileConfig("logging.conf", disable_existing_loggers=False)
-logger = logging.getLogger("LightCvMaker")
+logger = logging.getLogger("fast-resume")
 
 env = Environment(loader=FileSystemLoader("templates/"), autoescape=False)  # noqa: S701
 
@@ -41,18 +40,23 @@ class Resume:
             else:
                 msg = f"File extension '{resume_file.suffix}' not supported"
                 raise ValueError(msg)
-            self._data = dotdict(parsed_data)
-            self.name = resume_file.stem
-            self._technical_sections_keys = set(self._data)
-            self._section_keys = self._technical_sections_keys - {"basics", "meta"}
-            self._additional_section_keys = self._section_keys - DEFAULT_SECTIONS
-            self._default_section_keys = self._section_keys - self._additional_section_keys
+
+        self._data = dotdict(parsed_data)
 
         try:
-            locale.setlocale(locale.LC_ALL, (self._data.meta.language, "utf8"))
+            locale.setlocale(locale.LC_ALL, (self._data.meta.lang, "utf8"))
         except locale.Error as e:
-            msg = f"Invalid language code : {self._data.meta.language}. Maybe the locale is uninstalled on the system."
+            msg = f"Invalid language code : {self._data.meta.lang}. Maybe the locale is uninstalled on the system."
             raise ResumeParsingError(msg) from e
+        else:
+            self.lang = self._data.meta.lang
+
+        self.date_format = self._data.meta.date_format
+        self.name = resume_file.stem
+        self._technical_sections_keys = set(self._data)
+        self._section_keys = self._technical_sections_keys - {"basics", "meta"}
+        self._additional_section_keys = self._section_keys - DEFAULT_SECTIONS
+        self._default_section_keys = self._section_keys - self._additional_section_keys
 
         if self._data.meta.date_format is None:
             self._data.meta.date_format = "%x"
@@ -77,18 +81,22 @@ class Resume:
 
     @property
     def sections(self):
-        return {key: ResumeSection(key, value) for key, value in self._data.items() if key in self._section_keys}
+        return {key: ResumeSection(key, value, self) for key, value in self._data.items() if key in self._section_keys}
 
     @property
     def default_sections(self):
         return {
-            key: ResumeSection(key, value) for key, value in self._data.items() if key in self._default_section_keys
+            key: ResumeSection(key, value, self)
+            for key, value in self._data.items()
+            if key in self._default_section_keys
         }
 
     @property
     def additional_sections(self):
         return {
-            key: ResumeSection(key, value) for key, value in self._data.items() if key in self._additional_section_keys
+            key: ResumeSection(key, value, self)
+            for key, value in self._data.items()
+            if key in self._additional_section_keys
         }
 
     @property
@@ -134,13 +142,7 @@ class Resume:
     def _preprocess_text_fields(self):
         escape_html(self._data)
 
-        for section in self.sections.values():
-            for element in section:
-                if isinstance(element.summary, str):
-                    element.summary = markdown.markdown(element.summary.replace("\n", "<br/>"))
-
     def render(self, template_name):
-        print(self.main_sections)
         template = env.get_template(template_name + ".html")
         with Path(f"output/{re.sub(r'/', '_', self.name)}.html").open("w") as output_file:
             output_file.write(template.render(resume=self))

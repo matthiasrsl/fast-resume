@@ -97,7 +97,7 @@ h3 {
 }
 
 p, li {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 svg path, .material-icons {
@@ -112,7 +112,7 @@ svg path, .material-icons {
 /* Header */
 
 
-li {
+header li {
     font-size: 16px;
 }
 
@@ -219,7 +219,7 @@ h1.name {
 
 .about-me p {
     font-family: Opensans;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* Separation line */
@@ -286,7 +286,6 @@ h3 {
 .elt_dates_and_place, .acc_name, .lang_info {
     font-family: Opensans;
     color: var(--color-medium);
-    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -318,7 +317,6 @@ h3 {
 }
 
 .elt .keyword {
-    font-size: 12px;
     padding: 1px 5px;
 }
 
@@ -332,6 +330,10 @@ h3 {
     margin-top: 3px;
 }
 
+.elt_description p {
+    margin-top: 6px;
+}
+
 .elt_description ul {
     margin: 0;
     padding: 0;
@@ -339,7 +341,6 @@ h3 {
 }
 
 .elt_description li {
-    font-size: 12px;
     list-style-type: disc;
 }
 
@@ -350,7 +351,7 @@ h3 {
     margin-top: -7px;
 }
 
-.elterience .links {
+.elt .links {
     margin-bottom: 5px;
 }
 
@@ -507,6 +508,23 @@ section.info {
 
 .elt_skills .elt_keywords {
     white-space: wrap;
+}
+
+.elt_skills .elt_keywords .keyword {
+    display: inline;
+    border: none;
+    padding: 0;
+    margin: auto;
+    color: var(--color-dark);
+    text-transform: none;
+}
+
+.elt_skills .elt_keywords .keyword:after {
+    content: ", ";
+}
+
+.elt_skills .elt_keywords .keyword.last:after {
+    content: none;
 }
 
 /* End of skill section */

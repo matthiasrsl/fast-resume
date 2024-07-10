@@ -1,14 +1,20 @@
+from typing import TYPE_CHECKING
+
+from src.constants import SECTION_NAME_L10N
 from src.resume_element import ResumeElement
+
+if TYPE_CHECKING:
+    from src.resume import Resume
 
 
 class ResumeSection:
-    def __init__(self, key, elements: list[dict]) -> None:
+    def __init__(self, key, elements: list[dict], resume: "Resume") -> None:
         if not isinstance(elements, list):
             msg = f"A ResumeSection objects must be build from a list, not {type(elements)}."
             raise TypeError(msg)
         self.slug = key
-        self.name = key.capitalize()
-        self.elements = [ResumeElement(element, self.slug) for element in elements]
+        self.name = SECTION_NAME_L10N[resume.lang][key]
+        self.elements = [ResumeElement(element, self.slug, resume) for element in elements]
 
     def __getitem__(self, index):
         return self.elements[index]

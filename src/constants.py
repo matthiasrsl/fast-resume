@@ -33,7 +33,7 @@ SECTION_ATTRIBUTE_MAPPING = {
         "url": "url",
     },
     "education": {
-        "label": "area_and_study_type",
+        "label": "area",
         "organization": "institution",
         "startDate": "startDate",
         "endDate": "endDate",
@@ -120,6 +120,46 @@ SECTION_ATTRIBUTE_MAPPING = {
         "organization": "company",
         "summary": "reference",
         "url": "email",
+    },
+}
+
+L10N = {
+    "en": {
+        "date_since": "Since",
+        "date_until": "Until",
+    },
+    "fr": {
+        "date_since": "Depuis",
+        "date_until": "Jusqu'à",
+    },
+}
+
+SECTION_NAME_L10N = {
+    "en": {
+        "work": "Work experience",
+        "volunteer": "Volunteer",
+        "education": "Education",
+        "awards": "Awards",
+        "certificates": "Certificates",
+        "publications": "Publications",
+        "skills": "Skills",
+        "languages": "Languages",
+        "interests": "Personal interests",
+        "references": "References",
+        "projects": "Personal projects",
+    },
+    "fr": {
+        "work": "Expérience",
+        "volunteer": "Volontariat",
+        "education": "Formation",
+        "awards": "Récompenses",
+        "certificates": "Certifications",
+        "publications": "Publications",
+        "skills": "Compétences",
+        "languages": "Langues",
+        "interests": "Centres d'intérêt",
+        "references": "Références",
+        "projects": "Projets personnels",
     },
 }
 

@@ -10,5 +10,4 @@ if __name__ == "__main__":
 
     resume = Resume(args.resume)
     resume.preprocess()
-    print(resume)  # noqa: T201
     resume.render(args.template)

@@ -48,14 +48,13 @@
       {% endif %}
       <span class="elt_info">
         <span class="elt_dates_and_location">
-          {% if elt.startDate %}
+          {% if elt.dates %}
           <span class="elt_dates nowrap">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <path class="svg_icon"
                 d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z" />
             </svg>
-            {{ elt.startDate.strftime(resume.meta.date_format).capitalize() }}
-            {% if elt.endDate %} - {{ elt.endDate.strftime(resume.meta.date_format).capitalize() }}{% endif %}</span>
+            {{ elt.dates }}</span>
           {% endif %}
           {% if elt.location %}
           <span class="elt_place nowrap">
@@ -75,9 +74,7 @@
         {% if elt.keywords %}
         <span class="elt_keywords nowrap">
           {% for keyword in elt.keywords %}
-          <span class="keyword">
-            {{ keyword }}
-          </span>
+          <span class="keyword {% if loop.last %}last{% endif %}">{{ keyword }}</span>
           {% endfor %}
         </span>
         {% endif %}
