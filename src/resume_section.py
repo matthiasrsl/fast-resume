@@ -13,7 +13,11 @@ class ResumeSection:
             msg = f"A ResumeSection objects must be build from a list, not {type(elements)}."
             raise TypeError(msg)
         self.slug = key
-        self.name = SECTION_NAME_L10N[resume.lang][key]
+        self.section_name_l10n = SECTION_NAME_L10N[resume.lang]
+        try:
+            self.name = self.section_name_l10n[key]
+        except KeyError:
+            self.name = key.replace("_", " ")
         self.elements = [ResumeElement(element, self.slug, resume) for element in elements]
 
     def __getitem__(self, index):

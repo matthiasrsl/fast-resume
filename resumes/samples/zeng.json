@@ -249,7 +249,7 @@
     }
   ],
   "meta": {
-    "language": "en",
+    "lang": "en",
     "date_format": "%B %Y",
     "colors": {
       "vibrant": "#f55757",

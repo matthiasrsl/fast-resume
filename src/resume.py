@@ -144,5 +144,7 @@ class Resume:
 
     def render(self, template_name):
         template = env.get_template(template_name + ".html")
-        with Path(f"output/{re.sub(r'/', '_', self.name)}.html").open("w") as output_file:
+        output_path = Path(f"output/{re.sub(r'/', '_', self.name)}.html")
+        with output_path.open("w") as output_file:
             output_file.write(template.render(resume=self))
+        logger.info("Exported resume %s to %s.", self.name, output_path)
