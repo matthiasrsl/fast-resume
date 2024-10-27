@@ -67,12 +67,11 @@
     display: flex;
     height: 29cm;
     flex-direction: column;
-    font-family: Merriweather;
+    font-family: "DejaVu Serif";
     padding: 10px 20px;
 }
 
 header, section {
-    flex-shrink: 0;
     padding: 10px;
 }
 
@@ -83,6 +82,7 @@ header {
 a {
     text-decoration: none;
     color: var(--color-dark);
+    text-decoration-color: none;
 }
 
 p, h1, h2, h3, h4, h5 {
@@ -90,16 +90,12 @@ p, h1, h2, h3, h4, h5 {
     color: var(--color-dark);
 }
 
-h3 {
-    font-family: 'Opensans';
-}
-
 p, li {
     font-size: 13px;
 }
 
 svg path, .material-icons {
-    fill: var(--color-medium);
+    fill: var(--color-dark);
 }
 
 .nowrap {
@@ -114,116 +110,52 @@ header li {
     font-size: 16px;
 }
 
-.profile-and-contact {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0px;
-    max-height: 2.8cm;
-    overflow: visible;
-}
-
-.profile-pic-and-infos {
-    display: flex;
-}
-
-/* Profile picture */
-
-.profile_pic {
-    position: relative;
-    top: -2px;
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 20px;
-    border-radius: 50%;
-    width: auto;
-    height:auto;
-}
-
-li {
-    list-style-type: none;
-}
-
-header svg {
-    margin-right: 2px;
-    width: 22px;
-    flex-shrink: 0;
-}
-
 /* Profile infos */
 
-
 h1.name {
-    margin-bottom: 3px;
-    position: relative;
-    left: -2px;
-    font-family: Opensans;
-    /*color: #27344D;*/
-    color: var(--color-muted);
     font-size: 2.5em;
+    text-align: center;
+    border-bottom: 2px solid var(--color-dark);
+    margin-bottom: 4px;
 }
 
 .profile_infos p {
     font-size: 16px;
-    font-family: Opensans;
-    padding-right: 80px;
 }
 
 /* Contact info */
 
-.contact-info {
-    width: 5.5cm;
-    margin-top: 15px;
-}
-
-.contact-info ul {
-    margin: 0;
-    padding: 0;
+ul.contact-info {
+    list-style-position: inside;
+    margin: 2px 0;
+    text-align: center;
+    line-height: 70%;
 }
 
 .contact-info li {
-    font-size: 12px;
-    display: flex;
-    font-family: Opensans;
-    margin-bottom: 1px;
-    color: var(--color-dark);
+    font-size: 11px;
+    display: inline;
+    list-style-type: disc;
 }
 
-.contact_text {
-    display: inline-block;
-    padding: 2px 0;
-}
-
-
-.contact-info .material-icons {
+.contact-info li::before {
+    content: "∙";
+    font-size: 20px;
     position: relative;
-    top: -2px;
-    left: -1px;
-    margin: auto 1px;
+    top: 2px;
 }
+
+.contact-info li:first-child::before {
+    content: "";
+}
+
 
 /* Title and about me */
 
 .about-me {
-    max-width: 67%;
     margin-top: 10px;
     text-align: justify;
 }
-
-.resume_title {
-    font-size: 20px;
-}
-
-.about-me p {
-    font-family: Opensans;
-    font-size: 14px;
-}
-
-/* Separation line */
-
-.sep_line {
-    height: 3px;
-}
-
 
 /* Resume body */
 
@@ -231,98 +163,61 @@ h1.name {
     display: flex;
 }
 
-section.main_sections, section.aside_sections {
+section {
     display: flex;
+    width: auto;
     flex-direction: column;
     padding-top: 0;
-}
-
-section.main_sections {
-    flex-shrink: 1;
-}
-
-section.aside_sections {
-    flex-shrink: 2;
-}
-
-.resumesection {
     margin-bottom: 15px;
-    display: inline-block;
 }
 
 h3 {
-    color: var(--color-muted);
     font-size: 14px;
     margin-bottom: 2px;
     text-transform: uppercase;
     font-weight: bold;
-    border-bottom: 2px solid var(--color-muted);
+    border-bottom: 2px solid var(--color-dark);
 }
+
+/* Resume elements */
 
 .elt {
     margin-bottom: 7px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--color-light);
+    padding: 5px 10px;
 }
 
-.elt.last {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.elt_label {
-    font-size: 16px;
+.label {
     font-style: italic;
 }
 
-.elt p {
-    line-height: 150%;
+div.elt_label_dates_and_place {
+    display: flex;
+    justify-content: space-between;
 }
 
-.elt_dates_and_place, .acc_name, .lang_info {
-    font-family: Opensans;
-    color: var(--color-medium);
-    text-transform: uppercase;
+p.elt_dates_and_place {
+    text-align: right;
 }
 
-.elt .company {
-    display: inline-block;
-    margin-top: 4px;
+.elt_keywords {
+    margin-top: 6px;
 }
 
-.elt_dates {
-    text-transform: none;
-    font-family: "DejaVu Serif";
-    font-style: italic;
+.keyword::before {
+    content: "∙";
+    margin-right: 3px;
 }
 
-.elt_dates_and_location {
-    white-space: nowrap;
+.keyword:first-child::before {
+    content: "";
+    margin: 0;
 }
 
-.info .elt_dates_and_location {
-    white-space: normal;
-}
-
-.info .elt_keywords, .info .elt_dates, .info .elt_place {
-    margin-right: 22px;
-}
-
-.elt_keywords, .elt_dates, .elt_place {
-    margin-right: 22px;
-}
-
-.elt .keyword {
-    padding: 1px 5px;
-}
-
-.lang_level, .school a, .company a, .company {
-    color: var(--color-vibrant) !important;
+.lang_level, .school a, .organization a, .organization {
     font-weight: bold;
 }
 
 .elt_description {
-    font-family: Opensans;
     margin-top: 3px;
 }
 
@@ -353,82 +248,12 @@ h3 {
 
 /* Accomplishements (projects) */
 
-.elt_accomplishments .elt_label {
-    font-size: 12px;
-    font-weight: bold;
-    font-style: normal;
-    font-family: Opensans;
-    position: relative;
-    top: 3px;
-}
-
-.accomplishement .acc_link a, .links a {
-    color: var(--color-medium);
-    font-family: Opensans;
-}
-
-.accomplishement svg {
-    margin: -5px inherit;
-    position: relative;
-    top: 8px;
-}
-
-.acc_link {
-    display: inline-block;
-    max-height: 18px;
-    overflow: visible;
-    text-transform: none;
-    font-family: Opensans;
-    font-size: 12px;
-}
-
-.elt_label .acc_link a {
-    font-weight: bold;
-    font-style: normal;
-}
-
-.acc_name {
-    text-transform: none;
-}
-
-.accomplishement .elt_description {
-    margin-top: 3px;
-}
 
 /* References */
 
-.ref_name {
-    font-size: 14px;
-    color: var(--color-dark);
-    font-weight: bold;
-    font-style: italic;
-}
-
-.ref_email {
-    font-style: italic;
-    font-family: Opensans;
-    color: var(--color-medium);
-
-}
 
 /* Languages */
 
-.elt.lang {
-    margin-bottom: 7px;
-    padding-bottom: 7px;
-}
-
-.lang_name {
-    font-size: 16px;
-    font-style: italic;
-    display: block;
-    margin: 5px 0 3px 0;
-}
-
-.lang_level_refine, .certification_label {
-    font-weight: bold;
-    color: var(--color-medium);
-}
 
 
 
@@ -486,27 +311,11 @@ section.info {
     font-style: italic;
 }
 
-.keyword {
-    display: inline-block;
-    border: 1px var(--color-light); /* color bbb */
-    padding: 2px 5px;
-    margin-top: 5px;
-    margin-right: 3px;
-}
-
-.keyword.secondary {
-    border-style: dashed;
-}
-
-.keyword {
-    border-style: solid;
-}
-
-.elt_skills .elt_keywords {
+/*.elt_skills .elt_keywords {
     white-space: wrap;
 }
 
-.elt_skills .elt_keywords .keyword {
+ .elt_skills .elt_keywords .keyword {
     display: inline;
     border: none;
     padding: 0;
@@ -521,7 +330,7 @@ section.info {
 
 .elt_skills .elt_keywords .keyword.last:after {
     content: none;
-}
+} */
 
 /* End of skill section */
 
