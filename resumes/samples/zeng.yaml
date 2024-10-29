@@ -26,11 +26,10 @@ basics:
   transportation: Driver's license
 work:
 - name: Jane Street
-  position: Software engineering intern
+  position: Software engineer
   url: https://www.janestreet.com/
   startDate: '2022-01-03'
-  endDate: '2022-04-26'
-  location: New York, New York
+  location: New York, NY
   keywords:
   - OCaml
   - Code Generation
@@ -56,7 +55,6 @@ work:
   position: Software engineering intern (blockchain)
   startDate: '2020-09-04'
   endDate: '2020-12-22'
-  location: New York, New York
   summary: "- Authored Tezos smart contracts in a Haskell EDSL to automate proprietary
     applications for permissioned blockchains.\n"
   keywords:
@@ -148,7 +146,7 @@ interests:
 - name: Reading / Writing
 references:
 - name: Jane Doe
-  reference: Hire this guy ! He has 7 internships !
+  reference: Hire this guy! He has 7 internships!
   email: mailto:janedoe@janestreet.com
 projects:
 - summary: Python bindings for Dhall, a functional configuration language.

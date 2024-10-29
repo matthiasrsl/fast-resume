@@ -279,6 +279,13 @@ h3 {
     font-style: italic;
 }
 
+.company {
+    color: var(--color-vibrant) !important;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 4px;
+}
+
 .elt p {
     line-height: 150%;
 }
@@ -287,11 +294,6 @@ h3 {
     font-family: Opensans;
     color: var(--color-medium);
     text-transform: uppercase;
-}
-
-.elt .company {
-    display: inline-block;
-    margin-top: 4px;
 }
 
 .elt_dates {
@@ -318,11 +320,6 @@ h3 {
 
 .elt .keyword {
     padding: 1px 5px;
-}
-
-.lang_level, .school a, .company a, .company {
-    color: var(--color-vibrant) !important;
-    font-weight: bold;
 }
 
 .elt_description {
