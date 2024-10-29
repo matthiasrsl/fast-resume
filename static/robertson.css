@@ -1,0 +1,556 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot');
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../resources/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/opensans/OpenSans-Bold.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    src: url("../resources/fonts/merriweather/Merriweather-Italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Material icons */
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v114/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Generic layout and test formatting */
+
+.resume_wrapper {
+    display: flex;
+    height: 29cm;
+    flex-direction: column;
+    font-family: Merriweather;
+    padding: 10px 20px;
+}
+
+header, section {
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+p, h1, h2, h3, h4, h5, li {
+    margin: 0;
+    color: var(--color-medium);
+}
+
+h3 {
+    font-family: 'Opensans';
+}
+
+p, li {
+    font-size: 13px;
+}
+
+svg path, .material-icons {
+    fill: var(--color-medium);
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/* Header */
+
+
+header li {
+    font-size: 16px;
+}
+
+.profile-and-contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    max-height: 2.8cm;
+    overflow: visible;
+}
+
+.profile-pic-and-infos {
+    display: flex;
+}
+
+/* Profile picture */
+
+.profile_pic {
+    position: relative;
+    top: -2px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    width: auto;
+    height:auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+header svg {
+    margin-right: 2px;
+    width: 22px;
+    flex-shrink: 0;
+}
+
+/* Profile infos */
+
+
+h1.name {
+    margin-bottom: 3px;
+    position: relative;
+    left: -2px;
+    font-family: Opensans;
+    /*color: #27344D;*/
+    color: var(--color-dark);
+    font-size: 2.5em;
+}
+.profile_infos p {
+    font-size: 16px;
+    font-family: Opensans;
+    padding-right: 80px;
+}
+
+/* Contact info */
+
+.contact-info {
+    width: 5.5cm;
+    margin-top: 15px;
+}
+
+.contact-info ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.contact-info li {
+    font-size: 12px;
+    display: flex;
+    font-family: Opensans;
+    margin-bottom: 1px;
+    color: var(--color-medium);
+}
+
+.contact_text {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.contact-info svg {
+    position: relative;
+}
+
+.contact-info .material-icons {
+    position: relative;
+    top: -2px;
+    left: -1px;
+    margin: auto 1px;
+}
+
+/* Title and about me */
+
+.about-me {
+    max-width: 67%;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.resume_title {
+    font-size: 20px;
+}
+
+.about-me p {
+    font-family: Opensans;
+    font-size: 14px;
+}
+
+/* Separation line */
+
+.sep_line {
+    height: 3px;
+}
+
+
+/* Resume body */
+
+.resume_body {
+    display: flex;
+    border-top: 1px solid var(--color-light);
+}
+
+section.main_sections, section.aside_sections {
+    display: flex;
+    flex-direction: column;
+    /* padding: 3px; */
+}
+
+section.main_sections {
+    flex-shrink: 1;
+}
+
+section.aside_sections {
+    flex-shrink: 2;
+    min-width: 30%;
+    border-right: 1px solid var(--color-light);
+}
+
+.resumesection {
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.resumesection.last {
+    border-bottom: none;
+}
+
+h3 {
+    color: var(--color-dark);
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.elt {
+    margin-bottom: 7px;
+    padding-bottom: 10px;
+}
+
+.elt.last {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.elt_label {
+    font-family: Opensans;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    font-weight: bold;
+}
+
+.main_sections .elt_dates_and_place span:not(.last)::after {
+    content: " / ";
+}
+
+/* .aside_sections .elt_dates_and_place span:not(.last)::after {
+    content: "";
+    display: block;
+} */
+
+.aside_sections .elt_dates_and_place  {
+    display: flex;
+    flex-direction: column;
+}
+
+.organization {
+    font-weight: bold;
+    color: var(--color-vibrant);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.elt p {
+    line-height: 150%;
+}
+
+.elt_dates_and_place, .keywords, .acc_name, .lang_info {
+    font-family: Opensans;
+    color: var(--color-medium);
+}
+
+.elt_dates {
+    text-transform: none;
+    font-family: "DejaVu Serif";
+    font-style: italic;
+}
+
+.keyword {
+    display: inline-block;
+    border: 1px var(--color-light); /* color bbb */
+    padding: 2px 5px;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.keyword.secondary {
+    border-style: dashed;
+}
+
+.keyword {
+    border-style: solid;
+}
+
+.elt_description {
+    font-family: Opensans;
+    margin-top: 3px;
+}
+
+.elt_description p {
+    margin-top: 6px;
+}
+
+.elt_description ul {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.elt_description li {
+    list-style-type: disc;
+}
+
+.elt svg {
+    position: relative;
+    top: 8px;
+    width: 16px;
+    margin-top: -7px;
+}
+
+.elt .links {
+    margin-bottom: 5px;
+}
+
+/* Accomplishements (projects) */
+
+.elt_accomplishments .elt_label {
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: Opensans;
+    position: relative;
+    top: 3px;
+}
+
+.accomplishement .acc_link a, .links a {
+    color: var(--color-medium);
+    font-family: Opensans;
+}
+
+.accomplishement svg {
+    margin: -5px inherit;
+    position: relative;
+    top: 8px;
+}
+
+.acc_link {
+    display: inline-block;
+    max-height: 18px;
+    overflow: visible;
+    text-transform: none;
+    font-family: Opensans;
+    font-size: 12px;
+}
+
+.elt_label .acc_link a {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.acc_name {
+    text-transform: none;
+}
+
+.accomplishement .elt_description {
+    margin-top: 3px;
+}
+
+/* References */
+
+.ref_name {
+    font-size: 14px;
+    color: var(--color-dark);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ref_email {
+    font-style: italic;
+    font-family: Opensans;
+    color: var(--color-medium);
+
+}
+
+/* Languages */
+
+.elt.lang {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+}
+
+.lang_name {
+    font-size: 16px;
+    font-style: italic;
+    display: block;
+    margin: 5px 0 3px 0;
+}
+
+.lang_level_refine, .certification_label {
+    font-weight: bold;
+    color: var(--color-medium);
+}
+
+
+
+
+/* Info section */
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 5.5cm;
+    padding-top: 0;
+}
+
+.info > div {
+    margin-bottom: 20px;
+}
+
+.info ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Skill section */
+
+.skillcategory {
+    margin-bottom: 3px;
+    padding: 4px 0 7px;
+    border-bottom: 1px dashed var(--color-light);
+}
+
+.skillcategory.last {
+    border-bottom: none;
+}
+
+.skills h4 {
+    font-family: Merriweather;
+    color: var(--color-muted);
+    font-size: 14px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.skills .skill-name {
+    font-size: 12px;
+    font-family: Opensans;
+}
+
+.skills .skill-name.proficient {
+    font-weight: bold;
+}
+
+.skills .skill-name.weak {
+    color: var(--color-medium);
+    font-style: italic;
+}
+
+.elt_skills .elt_keywords {
+    white-space: wrap;
+}
+
+.elt_skills .keyword {
+    display: inline;
+    border: none;
+    padding: 0;
+    margin: auto;
+    color: var(--color-dark);
+    text-transform: none;
+}
+
+.elt_skills .keyword:after {
+    content: ", ";
+}
+
+.elt_skills .keyword.last:after {
+    content: none;
+}
+
+/* End of skill section */
+
+
+.traits li {
+    margin-top: 5px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+
+.hobbies li {
+    margin-top: 5px;
+}
+
+.hobby_name {
+    font-style: italic;
+}
+
+.hobby_dates {
+    font-size: 12px;
+}
+
+.hobby_refine {
+    font-size: 12px;
+    color: var(--color-medium);
+    font-family: Opensans;
+}

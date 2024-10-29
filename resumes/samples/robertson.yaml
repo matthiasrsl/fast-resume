@@ -1,0 +1,173 @@
+---
+basics:
+  name: Patricia Robertson
+  label: Software Engineer
+  image: ''
+  email: pat@robertson.com
+  phone: 1 (613) 983-9079
+  url: https://robertson.com
+  summary: Lorem ipsum dolor sit amet, consectetur adisciping elit. Sed non risus.
+    Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed,
+    dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue,
+    euismod non, mi.
+  location:
+    address: 2712 Broadway St
+    postalCode: CA 94115
+    city: San Francisco
+    countryCode: US
+    region: California
+  profiles:
+  - network: Github
+    username: s-zeng
+    url: https://github.com/s-zeng
+  - network: LinkedIn
+    username: s-zeng1
+    url: https://linkedin.com/in/s-zeng
+  transportation: Driver's license
+work:
+- name: Nvidia
+  position: Software engineer (firmware tooling)
+  startDate: '2021-05-02'
+  endDate: '2022-08-20'
+  location: Remote
+  summary: Implemented **various** components *of the firmware* tooling codebase in
+    order to improve and modernize the firmware toolbox to achieve higher robustness
+    and to accelerate and facilitate the development in systems relying on the firmware.
+  highlights:
+  - Continued development work on Haskell firmware tooling codebase
+  - Implemented network scheduler for custom communications protocols in
+    Haskell using novel functional techniques
+  - Designed and implemented C API code generation tools for embedded real-time CPU/GPU transmission.
+  keywords:
+  - Haskell
+  - Firmware
+  - C
+- name: TQ Tezos
+  position: Software engineering intern (blockchain)
+  url: https://tezosprojects.com/
+  startDate: '2020-09-04'
+  endDate: '2020-12-22'
+  summary: "- Authored Tezos smart contracts in a Haskell EDSL to automate proprietary
+    applications for permissioned blockchains.\n"
+  keywords:
+  - Blockchain
+  - Haskell
+  - Python
+  - Apache Spark
+  - Scala
+volunteer:
+- organization: Electronic Frontier Foundation
+  position: Volunteer
+  url: https://eff.org/
+  startDate: '2019-06-28'
+  endDate: '2019-08-23'
+  summary: Helped gathering information regarding current open source software lawsuits.
+education:
+- institution: University of Waterloo
+  url: https://uwaterloo.ca/
+  area: Computer Science
+  studyType: Bachelor's degree
+  startDate: '2021-09-08'
+  endDate: '2022-05-20'
+  score: '4.0'
+  courses:
+  - DB1101 - Basic SQL
+awards:
+- title: Best Human
+  date: '2014-11-01'
+  awarder: Company
+  summary: With special thanks from the coffee guy.
+certificates:
+- name: AWS Certified Developer - Associate
+  date: '2023-05-10'
+  issuer: AWS
+  url: https://aws.amazon.com
+publications:
+- name: Blockchain-based Decentralized Identity Management for Healthcare Systems
+  publisher: TQ Tezos
+  releaseDate: '2021-01-23'
+  url: https://arxiv.org/abs/2307.16239
+  summary: Blockchain-based decentralized identity management provides a promising
+    solution to improve the security and privacy of healthcare systems and make them
+    scalable. Traditional Identity Management Systems are centralized, which makes
+    them single-point-of-failure, vulnerable to attacks and data breaches, and non-scalable.
+    In contrast, decentralized identity man…
+skills:
+- name: Firmware tooling
+  level: Senior
+  keywords:
+  - Haskell
+  - Systems
+  - Python
+- name: Blockchain
+  level: Intermediate
+  keywords:
+  - Smart contract
+  - Python
+- name: Web Development
+  level: Intermediate
+  keywords:
+  - HTML
+  - CSS
+  - JavaScript
+  - React
+languages:
+- language: English
+  full_fluency: Native speaker
+- language: Spanish
+  full_fluency: Conversational
+  level: B2
+interests:
+- name: Open source
+  keywords:
+  - Development
+  - Legal Aspect
+- name: Reading / Writing
+references:
+- name: Jane Doe
+  reference: Pat is a talented and dedicated woman.
+  email: mailto:janedoe@janestreet.com
+projects:
+- name: Board to latex
+  startDate: '2019-01-01'
+  endDate: '2021-01-01'
+  summary: Turn pictures of math into LaTeX.
+  url: https://github.com/s-zeng/board-to-latex
+  keywords:
+  - Flask
+  - OCR
+  - Latex
+open_source:
+- summary: "`835541e` Add support for Dune"
+  keywords:
+  - Rust
+  - Vim
+  url: https://github.com/eraserhd/parinfer-rust
+- summary: "`59ef37d` Implement shortcut to dynamically use other telescopes"
+  url: https://github.com/nvim-lua/telescope.nvim
+  keywords:
+  - Lua
+  - Vim Script
+traits:
+- name: Proactive
+- name: Communicator
+- name: Hardworking
+meta:
+  lang: en
+  date_format: "%B %Y"
+  colors:
+    vibrant: "#5884DC"
+    muted: "#27344D"
+    light: "#ddd"
+    dark: "#222"
+    medium: "#505050"
+  main_sections:
+  - work
+  - projects
+  - open_source
+  aside_sections:
+  - education
+  - skills
+  - languages
+  - certificates
+  - references
