@@ -43,8 +43,9 @@ class ResumeElement:
     def full_summary(self):
         result = self.summary or ""
         if self.highlights:  # If self.highlights is not None and not empty.
+            result += "\n"
             for highlight in self.highlights:
-                result += f"  \n- {highlight}"
+                result += f"  \n - {highlight}"
         return markdown.markdown(result)
 
     @property

@@ -57,7 +57,7 @@ work:
   startDate: '2020-09-04'
   endDate: '2020-12-22'
   location: New York, New York
-  summary: "・Authored Tezos smart contracts in a Haskell EDSL to automate proprietary
+  summary: "- Authored Tezos smart contracts in a Haskell EDSL to automate proprietary
     applications for permissioned blockchains.\n"
   keywords:
   - Blockchain
@@ -71,9 +71,9 @@ work:
   endDate: '2020-08-13'
   location: Palo Alto, California
   summary: |-
-    ・Developed and maintained large Haskell code base responsible for automated firmware documentation, code, and signal generation.
-    ・Improved Haskell products' performance and runtimes by over 20% laziness-related space leaks and rewriting hot code paths.
-    ・Responsible for design and implementation of firmware verification infrastructure employed by entire organization.
+    - Developed and maintained large Haskell code base responsible for automated firmware documentation, code, and signal generation.
+    - Improved Haskell products' performance and runtimes by over 20% laziness-related space leaks and rewriting hot code paths.
+    - Responsible for design and implementation of firmware verification infrastructure employed by entire organization.
   keywords:
   - Haskell
   - Python
@@ -136,9 +136,9 @@ skills:
   - React
 languages:
 - language: English
-  fluency: Native speaker
+  full_fluency: Native speaker
 - language: Spanish
-  fluency: Conversational
+  full_fluency: Conversational
   level: B2
 interests:
 - name: Open source
@@ -187,7 +187,7 @@ meta:
   colors:
     vibrant: "#f55757"
     muted: "#9c1f1f"
-    light: "#aaa"
+    light: "#ddd"
     dark: "#222"
     medium: "#505050"
   main_sections:
