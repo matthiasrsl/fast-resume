@@ -210,7 +210,7 @@ h1.name {
 /* Title and about me */
 
 .about-me {
-    max-width: 67%;
+    max-width: 80%;
     margin-top: 10px;
     text-align: justify;
 }
@@ -241,7 +241,7 @@ h1.name {
 section.main_sections, section.aside_sections {
     display: flex;
     flex-direction: column;
-    /* padding: 3px; */
+    padding: 15px;
 }
 
 section.main_sections {
@@ -250,12 +250,13 @@ section.main_sections {
 
 section.aside_sections {
     flex-shrink: 2;
-    min-width: 30%;
+    min-width: 28%;
     border-right: 1px solid var(--color-light);
 }
 
 .resumesection {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
     display: inline-block;
     border-bottom: 1px solid var(--color-light);
 }
@@ -274,7 +275,11 @@ h3 {
 
 .elt {
     margin-bottom: 7px;
-    padding-bottom: 10px;
+    padding-bottom: 7px;
+}
+
+.main_sections .elt {
+    margin-bottom: 10px;
 }
 
 .elt.last {
@@ -291,12 +296,9 @@ h3 {
 
 .main_sections .elt_dates_and_place span:not(.last)::after {
     content: " / ";
+    font-weight: normal;
+    color: var(--color-medium);
 }
-
-/* .aside_sections .elt_dates_and_place span:not(.last)::after {
-    content: "";
-    display: block;
-} */
 
 .aside_sections .elt_dates_and_place  {
     display: flex;
