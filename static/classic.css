@@ -48,7 +48,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 22px;
+    font-size: 16px;
     line-height: 1;
     letter-spacing: normal;
     text-transform: none;
@@ -56,9 +56,16 @@
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    color: var(--color-medium);
+    color: var(--color-light);
     -moz-font-feature-settings: 'liga';
     -moz-osx-font-smoothing: grayscale;
+}
+
+svg {
+    position: relative;
+    top: 6px;
+    width: 20px;
+    margin-top: -7px;
 }
 
 /* Generic layout and test formatting */
@@ -67,7 +74,7 @@
     display: flex;
     height: 29cm;
     flex-direction: column;
-    font-family: "DejaVu Serif";
+    font-family: "OpenSans";
     padding: 10px 20px;
 }
 
@@ -95,7 +102,7 @@ p, li {
 }
 
 svg path, .material-icons {
-    fill: var(--color-dark);
+    fill: var(--color-medium);
 }
 
 .nowrap {
@@ -113,10 +120,14 @@ header li {
 /* Profile infos */
 
 h1.name {
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: center;
-    border-bottom: 2px solid var(--color-dark);
-    margin-bottom: 4px;
+}
+
+.occupation {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2px;
 }
 
 .profile_infos p {
@@ -133,16 +144,16 @@ ul.contact-info {
 }
 
 .contact-info li {
-    font-size: 11px;
+    font-size: 14px;
     display: inline;
     list-style-type: disc;
 }
 
 .contact-info li::before {
     content: "∙";
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
-    top: 2px;
+    /* top: 2px; */
 }
 
 .contact-info li:first-child::before {
@@ -233,13 +244,6 @@ p.elt_dates_and_place {
 
 .elt_description li {
     list-style-type: disc;
-}
-
-.elt svg {
-    position: relative;
-    top: 8px;
-    width: 16px;
-    margin-top: -7px;
 }
 
 .elt .links {
