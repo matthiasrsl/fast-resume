@@ -10,57 +10,65 @@
 
 
 {% macro element(elt, loop, tags) -%}
-<div class="elt education_elt elt_{{ elt.section }} {% if loop.last %}last{% endif %}">
-  <div>
-    <div class="elt_label_dates_and_place">
-      <p class="elt_label_org">
+<div class="elt elt_{{ elt.section }} {% if loop.last %}last{% endif %}">
+  <div class="elt_label_dates_and_place">
+    <p class="elt_label_org">
+      {% if elt.organization %}
         <span class="organization">
-          {% if elt.organization %}
-            {% if elt.link %}
-              <a href="{{ elt.link.url }}" target="blank">{{ elt.organization }}</a>
-            {% else %}
-              {{ elt.organization }}
-            {% endif %}
+          {% if elt.link %}
+            <a href="{{ elt.link.url }}" target="blank">{{ elt.organization }}</a>
+          {% else %}
+            {{ elt.organization }}
           {% endif %}
         </span>
-        <br />
+      {% endif %}
+      <br />
+      {% if elt.label %}
         <span class="label">
-          {% if elt.label %}
-            {{ elt.label }}
-          {% endif %}
+          {{ elt.label }}
         </span>
-      </p>
+      {% endif %}
+    </p>
 
+    {% if elt.dates or elt.location %}
       <p class="elt_dates_and_place">
-        <span class="elt_dates">
-          {% if elt.dates %}
+        {% if elt.dates %}
+          <span class="elt_dates">
             {{ elt.dates }}
-          {% endif %}
-        </span>
+          </span>
+        {% endif %}
         <br />
-        <span class="elt_location">
-          {% if elt.location %}
+        {% if elt.location %}
+          <span class="elt_location">
             {{ elt.location }}
-          {% endif %}
-        </span>
+          </span>
+        {% endif %}
       </p>
-    </div>
-
-    <div class="elt_description">
-      {{ elt.full_summary }}
-    </div>
+    {% endif %}
   </div>
+
+  {% if elt.keywords %}
+    <span class="elt_keywords nowrap">
+      {% for keyword in elt.keywords %}<span class="keyword {% if loop.last %}last{% endif %}">{{ keyword }}</span>{% endfor %}
+    </span>
+  {% endif %}
+
+  {% if elt.full_summary %}
+    <div class="elt_description">{{ elt.full_summary }}</div>
+  {% endif %}
 </div>
 {%- endmacro %}
 
 
 
 {% macro sectionmacro(section) -%}
-<div class="resumesection">
+<div class="resumesection section_{{ section.slug }}">
   <h3>{{ section.name }}</h3>
-  {% for elt in section %}
-    {{ element(elt, loop, section.tags) }}
-  {% endfor %}
+  <div class="section_elements">
+    {% for elt in section %}
+      {{ element(elt, loop, section.tags) }}
+    {% endfor %}
+  </div>
 </div>
 {%- endmacro %}
 

@@ -210,20 +210,6 @@ p.elt_dates_and_place {
     text-align: right;
 }
 
-.elt_keywords {
-    margin-top: 6px;
-}
-
-.keyword::before {
-    content: "∙";
-    margin-right: 3px;
-}
-
-.keyword:first-child::before {
-    content: "";
-    margin: 0;
-}
-
 .lang_level, .school a, .organization a, .organization {
     font-weight: bold;
 }
@@ -248,6 +234,12 @@ p.elt_dates_and_place {
 
 .elt .links {
     margin-bottom: 5px;
+}
+
+/* Experience section */
+
+.elt_work .elt_keywords {
+    display: none;
 }
 
 /* Accomplishements (projects) */
@@ -280,9 +272,75 @@ section.info {
     margin: 0;
 }
 
+/* Skills ans languages */
+
+.elt_skills .label, .elt_languages .label {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.elt_skills br, .elt_languages br {
+    display: none;
+}
+
+.elt_skills .elt_label_dates_and_place, .elt_skills .elt_label_org, 
+.elt_languages .elt_label_dates_and_place, .elt_languages .elt_label_org,
+.elt_languages .elt_description, .elt_languages .elt_description p {
+    display: inline;
+}
+
+.elt_skills, .elt_languages {
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 1px 10px;
+}
+
+.elt_skills.last, .elt_languages.last {
+    margin-bottom: 7px;
+}
+
 /* Skill section */
 
-.skillcategory {
+.elt_skills .label::after {
+    content: ": ";
+}
+
+.keyword::after {
+    content: ", ";
+    margin-right: 3px;
+}
+
+.elt_skills .keyword:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+/* Languages section */
+
+.elt_languages .elt_label_org {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+.elt_languages .label::after {
+    content: ":";
+}
+
+.elt_languages .organization {
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+.elt_languages .elt_description::before {
+    content: "(";
+}
+
+.elt_languages .elt_description::after {
+    content: ")";
+}
+
+/* .skillcategory {
     margin-bottom: 3px;
     padding: 4px 0 7px;
     border-bottom: 1px dashed var(--color-light);
@@ -313,7 +371,7 @@ section.info {
 .skills .skill-name.weak {
     color: var(--color-medium);
     font-style: italic;
-}
+} */
 
 /*.elt_skills .elt_keywords {
     white-space: wrap;
