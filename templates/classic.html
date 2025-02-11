@@ -47,11 +47,7 @@
     {% endif %}
   </div>
 
-  {% if elt.keywords %}
-    <span class="elt_keywords nowrap">
-      {% for keyword in elt.keywords %}<span class="keyword {% if loop.last %}last{% endif %}">{{ keyword }}</span>{% endfor %}
-    </span>
-  {% endif %}
+  {% if elt.keywords %}<span class="elt_keywords nowrap">{% for keyword in elt.keywords %}<span class="keyword {% if loop.last %}last{% endif %}">{{ keyword }}</span>{% endfor %}</span>{% endif %}
 
   {% if elt.full_summary %}
     <div class="elt_description">{{ elt.full_summary }}</div>

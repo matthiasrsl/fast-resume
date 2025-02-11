@@ -79,11 +79,7 @@ svg {
 }
 
 header, section {
-    padding: 10px;
-}
-
-header {
-    margin-bottom: 15px;
+    padding: 10px 10px 13px 10px;
 }
 
 a {
@@ -98,7 +94,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 p, li {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 svg path, .material-icons {
@@ -122,12 +118,13 @@ header li {
 h1.name {
     font-size: 2em;
     text-align: center;
+    margin-bottom: -2px;
 }
 
 .occupation {
     font-size: 20px;
     text-align: center;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
 }
 
 .profile_infos p {
@@ -182,6 +179,10 @@ section {
     margin-bottom: 15px;
 }
 
+.resumesection {
+    margin-bottom: 8px;
+}
+
 h3 {
     font-size: 14px;
     margin-bottom: 2px;
@@ -193,8 +194,8 @@ h3 {
 /* Resume elements */
 
 .elt {
-    margin-bottom: 7px;
-    padding: 5px 10px;
+    margin-bottom: 10px;
+    padding: 5px 2px;
 }
 
 .label {
@@ -222,6 +223,11 @@ p.elt_dates_and_place {
     margin-top: 6px;
 }
 
+.elt_description p, .elt_description li {
+    /* margin-top: 6px; */
+    max-width: 85%;
+}
+
 .elt_description ul {
     margin: 0;
     padding: 0;
@@ -241,17 +247,6 @@ p.elt_dates_and_place {
 .elt_work .elt_keywords {
     display: none;
 }
-
-/* Accomplishements (projects) */
-
-
-/* References */
-
-
-/* Languages */
-
-
-
 
 
 /* Info section */
@@ -274,6 +269,14 @@ section.info {
 
 /* Skills ans languages */
 
+.elt_skills, .elt_languages {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 1px 0;
+}
+
 .elt_skills .label, .elt_languages .label {
     font-style: normal;
     font-weight: bold;
@@ -289,21 +292,29 @@ section.info {
     display: inline;
 }
 
-.elt_skills, .elt_languages {
-    font-weight: normal;
-    font-size: 12px;
-    margin: 0;
-    padding: 1px 10px;
-}
-
 .elt_skills.last, .elt_languages.last {
     margin-bottom: 7px;
 }
 
+.elt_skills::after, .elt_languages::after {
+    content: "∙";
+    margin-left: 3px;
+    margin-right: 2px;
+}
+
+.elt_skills:last-child::after, .elt_languages:last-child::after {
+    content: "";
+    margin: 0;
+}
+
 /* Skill section */
 
-.elt_skills .label::after {
-    content: ": ";
+.elt_skills .elt_keywords::before {
+    content: "(";
+}
+
+.elt_skills .elt_keywords::after {
+    content: ")";
 }
 
 .keyword::after {
@@ -323,8 +334,8 @@ section.info {
     flex-direction: row-reverse;
 }
 
-.elt_languages .label::after {
-    content: ":";
+.elt_languages .label {
+    margin-right: 2px;
 }
 
 .elt_languages .organization {
@@ -340,84 +351,4 @@ section.info {
     content: ")";
 }
 
-/* .skillcategory {
-    margin-bottom: 3px;
-    padding: 4px 0 7px;
-    border-bottom: 1px dashed var(--color-light);
-}
 
-.skillcategory.last {
-    border-bottom: none;
-}
-
-.skills h4 {
-    font-family: Merriweather;
-    color: var(--color-muted);
-    font-size: 14px;
-    margin-bottom: 0;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.skills .skill-name {
-    font-size: 12px;
-    font-family: Opensans;
-}
-
-.skills .skill-name.proficient {
-    font-weight: bold;
-}
-
-.skills .skill-name.weak {
-    color: var(--color-medium);
-    font-style: italic;
-} */
-
-/*.elt_skills .elt_keywords {
-    white-space: wrap;
-}
-
- .elt_skills .elt_keywords .keyword {
-    display: inline;
-    border: none;
-    padding: 0;
-    margin: auto;
-    color: var(--color-dark);
-    text-transform: none;
-}
-
-.elt_skills .elt_keywords .keyword:after {
-    content: ", ";
-}
-
-.elt_skills .elt_keywords .keyword.last:after {
-    content: none;
-} */
-
-/* End of skill section */
-
-
-.traits li {
-    margin-top: 5px;
-    text-transform: capitalize;
-    font-style: italic;
-}
-
-
-.hobbies li {
-    margin-top: 5px;
-}
-
-.hobby_name {
-    font-style: italic;
-}
-
-.hobby_dates {
-    font-size: 12px;
-}
-
-.hobby_refine {
-    font-size: 12px;
-    color: var(--color-medium);
-    font-family: Opensans;
-}
