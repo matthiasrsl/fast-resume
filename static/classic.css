@@ -1,0 +1,354 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot');
+    src: url('../resources/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('../resources/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../resources/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../resources/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Opensans';
+    src: url('../resources/fonts/opensans/OpenSans-Bold.ttf') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../resources/fonts/merriweather/Merriweather-Regular.otf');
+    src: url("../resources/fonts/merriweather/Merriweather-Italic.otf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Material icons */
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v114/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    color: var(--color-light);
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+svg {
+    position: relative;
+    top: 6px;
+    width: 20px;
+    margin-top: -7px;
+}
+
+/* Generic layout and test formatting */
+
+.resume_wrapper {
+    display: flex;
+    height: 29cm;
+    flex-direction: column;
+    font-family: "OpenSans";
+    padding: 10px 20px;
+}
+
+header, section {
+    padding: 10px 10px 13px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    text-decoration-color: none;
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    color: var(--color-dark);
+}
+
+p, li {
+    font-size: 12px;
+}
+
+svg path, .material-icons {
+    fill: var(--color-medium);
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/* Header */
+
+
+header li {
+    font-size: 16px;
+}
+
+/* Profile infos */
+
+h1.name {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: -2px;
+}
+
+.occupation {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.profile_infos p {
+    font-size: 16px;
+}
+
+/* Contact info */
+
+ul.contact-info {
+    list-style-position: inside;
+    margin: 2px 0;
+    text-align: center;
+    line-height: 70%;
+}
+
+.contact-info li {
+    font-size: 14px;
+    display: inline;
+    list-style-type: disc;
+}
+
+.contact-info li::before {
+    content: "∙";
+    font-size: 16px;
+    position: relative;
+    /* top: 2px; */
+}
+
+.contact-info li:first-child::before {
+    content: "";
+}
+
+
+/* Title and about me */
+
+.about-me {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/* Resume body */
+
+.resume_body {
+    display: flex;
+}
+
+section {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    padding-top: 0;
+    margin-bottom: 15px;
+}
+
+.resumesection {
+    margin-bottom: 8px;
+}
+
+h3 {
+    font-size: 14px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-dark);
+}
+
+/* Resume elements */
+
+.elt {
+    margin-bottom: 10px;
+    padding: 5px 2px;
+}
+
+.label {
+    font-style: italic;
+}
+
+div.elt_label_dates_and_place {
+    display: flex;
+    justify-content: space-between;
+}
+
+p.elt_dates_and_place {
+    text-align: right;
+}
+
+.lang_level, .school a, .organization a, .organization {
+    font-weight: bold;
+}
+
+.elt_description {
+    margin-top: 3px;
+}
+
+.elt_description p {
+    margin-top: 6px;
+}
+
+.elt_description p, .elt_description li {
+    /* margin-top: 6px; */
+    max-width: 85%;
+}
+
+.elt_description ul {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.elt_description li {
+    list-style-type: disc;
+}
+
+.elt .links {
+    margin-bottom: 5px;
+}
+
+/* Experience section */
+
+.elt_work .elt_keywords {
+    display: none;
+}
+
+
+/* Info section */
+
+section.info {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 5.5cm;
+    padding-top: 0;
+}
+
+.info > div {
+    margin-bottom: 20px;
+}
+
+.info ul {
+    padding: 0;
+    margin: 0;
+}
+
+/* Skills ans languages */
+
+.elt_skills, .elt_languages {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 1px 0;
+}
+
+.elt_skills .label, .elt_languages .label {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.elt_skills br, .elt_languages br {
+    display: none;
+}
+
+.elt_skills .elt_label_dates_and_place, .elt_skills .elt_label_org, 
+.elt_languages .elt_label_dates_and_place, .elt_languages .elt_label_org,
+.elt_languages .elt_description, .elt_languages .elt_description p {
+    display: inline;
+}
+
+.elt_skills.last, .elt_languages.last {
+    margin-bottom: 7px;
+}
+
+.elt_skills::after, .elt_languages::after {
+    content: "∙";
+    margin-left: 3px;
+    margin-right: 2px;
+}
+
+.elt_skills:last-child::after, .elt_languages:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+/* Skill section */
+
+.elt_skills .elt_keywords::before {
+    content: "(";
+}
+
+.elt_skills .elt_keywords::after {
+    content: ")";
+}
+
+.keyword::after {
+    content: ", ";
+    margin-right: 3px;
+}
+
+.elt_skills .keyword:last-child::after {
+    content: "";
+    margin: 0;
+}
+
+/* Languages section */
+
+.elt_languages .elt_label_org {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+.elt_languages .label {
+    margin-right: 2px;
+}
+
+.elt_languages .organization {
+    font-weight: normal;
+    margin-left: 2px;
+}
+
+.elt_languages .elt_description::before {
+    content: "(";
+}
+
+.elt_languages .elt_description::after {
+    content: ")";
+}
+
+

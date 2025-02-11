@@ -80,8 +80,6 @@ header {
     margin-bottom: 15px;
 }
 
-
-
 a {
     text-decoration: none;
     color: var(--color-dark);
@@ -163,6 +161,7 @@ h1.name {
     color: var(--color-muted);
     font-size: 2.5em;
 }
+
 .profile_infos p {
     font-size: 16px;
     font-family: Opensans;
@@ -194,9 +193,6 @@ h1.name {
     padding: 2px 0;
 }
 
-.contact-info svg {
-    position: relative;
-}
 
 .contact-info .material-icons {
     position: relative;
