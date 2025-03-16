@@ -96,7 +96,7 @@ h3 {
 }
 
 p, li {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 svg path, .material-icons {
@@ -221,7 +221,6 @@ h1.name {
 
 .about-me p {
     font-family: Opensans;
-    font-size: 14px;
 }
 
 /* Separation line */

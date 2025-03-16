@@ -215,18 +215,10 @@ p.elt_dates_and_place {
     font-weight: bold;
 }
 
-.elt_description {
-    margin-top: 3px;
-}
-
-.elt_description p {
+.elt_description p, .elt_description ul:first-child {
     margin-top: 6px;
 }
 
-.elt_description p, .elt_description li {
-    /* margin-top: 6px; */
-    max-width: 85%;
-}
 
 .elt_description ul {
     margin: 0;
@@ -236,6 +228,7 @@ p.elt_dates_and_place {
 
 .elt_description li {
     list-style-type: disc;
+    margin-left: 20px;
 }
 
 .elt .links {
